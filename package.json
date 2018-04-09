@@ -1,6 +1,6 @@
 {
   "name": "muban-transition-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Javascript transitions for Muban components",
   "main": "./index.js",
   "types": "./index.d.ts",
