@@ -8,4 +8,10 @@ export default class TestClass {
    * @method foo
    */
   public foo(): void {}
+
+  /**
+   * @public
+   * @method bar
+   */
+  public bar(): void {}
 }
