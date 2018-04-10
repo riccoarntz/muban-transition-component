@@ -1,7 +1,8 @@
-import mubanTransitionMixin from 'lib/mixin/MubanTransitionMixin';
 import CoreComponent from 'muban-core/lib/CoreComponent';
-import mubanTransitionCoreMixin from 'lib/mixin/MubanTransitionCoreMixin';
+import mubanTransitionCoreMixin from '../mixin/MubanTransitionCoreMixin';
+import mubanTransitionMixin from '../mixin/MubanTransitionMixin';
+import IMubanTransitionComponent from 'lib/interface/IMubanTransitionComponent';
 
-export default class MubanTransitionComponent extends mubanTransitionMixin(
-  mubanTransitionCoreMixin(CoreComponent),
-) {}
+export const base: Constructor<IMubanTransitionComponent> &
+  typeof CoreComponent = mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent));
+export default class MubanTransitionComponent extends base {}

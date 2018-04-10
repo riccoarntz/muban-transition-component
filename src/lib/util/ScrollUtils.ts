@@ -1,5 +1,4 @@
 import bowser from 'bowser';
-import { TweenLite, Ease, Cubic } from 'gsap';
 
 /**
  * @class ScrollUtils
@@ -30,18 +29,9 @@ class ScrollUtils {
    * @public static
    * @method scrollToPosition
    * @param target
-   * @param duration
-   * @param ease
-   * @returns {Promise}
    */
-  public static scrollToPosition(
-    target: number | HTMLElement,
-    duration: number = 0.3,
-    ease: Ease = Cubic.easeInOut,
-  ): Promise<void> {
-    return new Promise((resolve: () => void) => {
-      scrollTo(duration, target, ease, resolve);
-    });
+  public static scrollToPosition(target: number): void {
+    window.scrollTo(0, target);
   }
 
   /**
@@ -58,14 +48,3 @@ class ScrollUtils {
 }
 
 export default ScrollUtils;
-
-export const scrollTo = (duration, target, ease, resolve) => {
-  TweenLite.to(window, duration, {
-    ease,
-    scrollTo: {
-      y: target,
-      autoKill: false,
-    },
-    onComplete: resolve,
-  });
-};

@@ -2,7 +2,7 @@ import AbstractTransitionController, { TransitionDirection } from 'transition-co
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
 import isElement from 'lodash/isElement';
 import { TimelineLite, TimelineMax } from 'gsap';
-import IMubanTransitionComponent from 'lib/interface/IMubanTransitionComponent';
+import IMubanTransitionComponent from '../interface/IMubanTransitionComponent';
 
 export default abstract class MubanTransitionController extends AbstractTransitionController<
   IMubanTransitionComponent
@@ -21,7 +21,7 @@ export default abstract class MubanTransitionController extends AbstractTransiti
     let instance: IMubanTransitionComponent;
 
     if (isElement(component)) {
-      instance = <IMubanTransitionComponent>getComponentForElement(<HTMLElement>component);
+      instance = getComponentForElement<IMubanTransitionComponent>(<HTMLElement>component);
     } else {
       instance = <IMubanTransitionComponent>component;
     }

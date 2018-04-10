@@ -1,5 +1,5 @@
 import AbstractTransitionController from 'transition-controller';
-import IMubanTransitionCoreComponent from 'lib/interface/IMubanTransitionCoreComponent';
+import IMubanTransitionCoreComponent from '../interface/IMubanTransitionCoreComponent';
 
 interface IMubanTransitionComponent extends IMubanTransitionCoreComponent {
   /**

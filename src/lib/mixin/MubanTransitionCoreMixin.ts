@@ -1,9 +1,9 @@
 import EventDispatcher from 'seng-event';
-import DisposableHelper from 'lib/event/DisposableHelper';
-import CoreComponent from 'muban-core/lib/CoreComponent';
-import MubanTransitionVariable from 'lib/data/MubanTransitionVariable';
+import DisposableHelper from '../event/DisposableHelper';
+import MubanTransitionVariable from '../data/MubanTransitionVariable';
+import ICoreComponent from 'lib/interface/ICoreComponent';
 
-function mubanTransitionCoreMixin<TBase extends Constructor<CoreComponent>>(Base: TBase) {
+function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Base: TBase) {
   return class MubanTransitionCoreMixin extends Base {
     /**
      * @description Namespace counter base
@@ -16,7 +16,7 @@ function mubanTransitionCoreMixin<TBase extends Constructor<CoreComponent>>(Base
     /**
      * @description Helper class for disposing of disposable instances
      */
-    protected disposable: DisposableHelper = new DisposableHelper();
+    public disposable: DisposableHelper = new DisposableHelper();
 
     /**
      * @description: EventDispatcher instance for dispatching/listening to events.

@@ -1,18 +1,20 @@
 import ScrollTrackerEvent from 'seng-scroll-tracker/lib/event/ScrollTrackerEvent';
 import ScrollTracker from 'seng-scroll-tracker/lib/ScrollTracker';
-import NativeEventListener from 'lib/event/NativeEventListener';
-import ScrollUtils from 'lib/util/ScrollUtils';
+import NativeEventListener from '../event/NativeEventListener';
+import ScrollUtils from '../util/ScrollUtils';
 import debounce from 'lodash/debounce';
-import { TweenLite } from 'gsap';
 import CommonEvent from 'seng-event/lib/event/CommonEvent';
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
 import CoreComponent from 'muban-core/lib/CoreComponent';
-import mubanTransitionCoreMixin from 'lib/mixin/MubanTransitionCoreMixin';
-import IMubanTransitionComponent from 'lib/interface/IMubanTransitionComponent';
-import MubanTransitionVariable from 'lib/data/MubanTransitionVariable';
+import mubanTransitionCoreMixin from '../mixin/MubanTransitionCoreMixin';
+import IMubanTransitionComponent from '../interface/IMubanTransitionComponent';
+import MubanTransitionVariable from '../data/MubanTransitionVariable';
 import bows from 'bows';
+import IMubanTransitionCoreComponent from 'lib/interface/IMubanTransitionCoreComponent';
 
-export default class MubanTransitionContentPage extends mubanTransitionCoreMixin(CoreComponent) {
+export const base: Constructor<IMubanTransitionCoreComponent> &
+  typeof CoreComponent = mubanTransitionCoreMixin(CoreComponent);
+export default class MubanTransitionContentPage extends base {
   /**
    * @description Logger for displaying messages
    */
@@ -143,10 +145,8 @@ export default class MubanTransitionContentPage extends mubanTransitionCoreMixin
         document.body.appendChild(scrollTrackerPoint.debugLabel);
       }
 
-      TweenLite.set(scrollTrackerPoint.debugLabel, {
-        height: `${scrollTrackerPoint.point.height}px`,
-        top: `${scrollTrackerPoint.point.position}px`,
-      });
+      scrollTrackerPoint.debugLabel.style.height = `${scrollTrackerPoint.point.height}px`;
+      scrollTrackerPoint.debugLabel.style.top = `${scrollTrackerPoint.point.position}px`;
     }
   }
 
@@ -229,25 +229,20 @@ export default class MubanTransitionContentPage extends mubanTransitionCoreMixin
    * @private
    * @method scrollToBlockFromUrl
    */
-  private scrollToComponentFromUrl(): Promise<any> {
-    return new Promise(resolve => {
-      if (window.location.hash) {
-        Object.keys(this.scrollComponents).forEach((key: string) => {
-          if (
-            this.scrollComponents[key].element.getAttribute(
-              MubanTransitionVariable.scrollIdAttribute,
-            ) === window.location.hash.slice(1)
-          ) {
-            return ScrollUtils.scrollToPosition(
-              this.scrollComponents[key].element.getBoundingClientRect().top +
-                ScrollUtils.scrollTop,
-            );
-          }
-        });
-      } else {
-        resolve();
-      }
-    });
+  private scrollToComponentFromUrl(): void {
+    if (window.location.hash) {
+      Object.keys(this.scrollComponents).forEach((key: string) => {
+        if (
+          this.scrollComponents[key].element.getAttribute(
+            MubanTransitionVariable.scrollIdAttribute,
+          ) === window.location.hash.slice(1)
+        ) {
+          ScrollUtils.scrollToPosition(
+            this.scrollComponents[key].element.getBoundingClientRect().top + ScrollUtils.scrollTop,
+          );
+        }
+      });
+    }
   }
 
   /**
