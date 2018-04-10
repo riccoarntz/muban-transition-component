@@ -17,6 +17,7 @@
     "skipLibCheck": true,
     "strictNullChecks": false,
     "sourceMap": true,
+    "target": "ESNext",
     "lib": [
       "DOM",
       "DOM.Iterable",

@@ -1,0 +1,338 @@
+import ScrollTrackerEvent from 'seng-scroll-tracker/lib/event/ScrollTrackerEvent';
+import ScrollTracker from 'seng-scroll-tracker/lib/ScrollTracker';
+import NativeEventListener from 'lib/event/NativeEventListener';
+import ScrollUtils from 'lib/util/ScrollUtils';
+import debounce from 'lodash/debounce';
+import { TweenLite } from 'gsap';
+import CommonEvent from 'seng-event/lib/event/CommonEvent';
+import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
+import CoreComponent from 'muban-core/lib/CoreComponent';
+import mubanTransitionCoreMixin from 'lib/mixin/MubanTransitionCoreMixin';
+import IMubanTransitionComponent from 'lib/interface/IMubanTransitionComponent';
+import MubanTransitionVariable from 'lib/data/MubanTransitionVariable';
+import bows from 'bows';
+
+export default class MubanTransitionContentPage extends mubanTransitionCoreMixin(CoreComponent) {
+  /**
+   * @description Logger for displaying messages
+   */
+  private log: bows = new bows('MubanTransitionContentPage');
+
+  public static setDebugLabel: boolean = false;
+  /**
+   * @description The collection of scroll components
+   */
+  private scrollComponents = {};
+  /**
+   * @public
+   * @property scrollTracker
+   * @description Here initiate the scrollTracker, the scrollTracker manages when a component is in view or
+   * when it's not!
+   */
+  private scrollTracker = new ScrollTracker();
+  /**
+   * @public
+   * @property scrollTrackerPoints
+   * @description Here we keep track of the scrollTracker points on this page
+   * @type {{}}
+   */
+  private scrollTrackerPoints = {};
+
+  /**
+   * @public
+   * @method allComponentsConstructed
+   */
+  public adopted(): void {
+    this.disposable.add(
+      new NativeEventListener(window, 'resize', debounce(this.handleResize.bind(this), 100)),
+    );
+    this.getElements(`[${MubanTransitionVariable.componentAttribute}]`).forEach(element => {
+      const component = <IMubanTransitionComponent>getComponentForElement(element);
+      if (component) {
+        this.disposable.add(
+          new NativeEventListener(
+            component.dispatcher,
+            CommonEvent.RESIZE,
+            this.handleResize.bind(this),
+          ),
+        );
+
+        if (element.hasAttribute(MubanTransitionVariable.scrollComponentAttribute)) {
+          this.scrollComponents[
+            component.constructor['displayName'] + component.eventNamespace
+          ] = component;
+        }
+      }
+    });
+
+    // Add al the components to the scroll tracker
+    this.addComponentsToScrollTracker(this.scrollComponents);
+
+    // Scroll to a component based on the #
+    this.scrollToComponentFromUrl();
+  }
+
+  /**
+   * @public
+   * @method addComponentsToScrollTracker
+   */
+  public addComponentsToScrollTracker(components): void {
+    Object.keys(components).forEach(componentId => {
+      // Check if it's not already added!
+      if (!this.scrollTrackerPoints[componentId]) {
+        // Store the ref
+        this.scrollComponents[componentId] = components[componentId];
+        // Get the correct data
+        const scrollTrackerData = this.getScrollTrackerData(components[componentId]);
+        // console.log('addComponentsToScrollTracker', componentId, scrollTrackerData);
+        const scrollTrackerPoint = this.scrollTracker.addPoint(
+          scrollTrackerData.yPosition,
+          scrollTrackerData.height,
+        );
+
+        // Store the reference
+        this.scrollTrackerPoints[componentId] = {
+          point: scrollTrackerPoint,
+          enterViewListener: this.handleComponentEnterView.bind(this, componentId),
+          leaveViewListener: this.handleComponentLeaveView.bind(this, componentId),
+          beyondViewListener: this.handleComponentBeyondView.bind(this, componentId),
+        };
+
+        scrollTrackerPoint.addEventListener(
+          ScrollTrackerEvent.ENTER_VIEW,
+          this.scrollTrackerPoints[componentId].enterViewListener,
+        );
+        scrollTrackerPoint.addEventListener(
+          ScrollTrackerEvent.LEAVE_VIEW,
+          this.scrollTrackerPoints[componentId].leaveViewListener,
+        );
+        scrollTrackerPoint.addEventListener(
+          ScrollTrackerEvent.SCROLLED_BEYOND,
+          this.scrollTrackerPoints[componentId].beyondViewListener,
+        );
+
+        // Check for the position on init
+        if (scrollTrackerPoint.isInBounds) {
+          this.handleComponentEnterView(componentId);
+        }
+
+        // Add a debug label
+        setTimeout(() => this.setDebugLabel(componentId), 100);
+      }
+    });
+  }
+
+  /**
+   * @private
+   * @method setDebugLabel
+   */
+  private setDebugLabel(componentId: string): void {
+    if (MubanTransitionContentPage.setDebugLabel) {
+      const scrollTrackerPoint = this.scrollTrackerPoints[componentId];
+
+      if (!scrollTrackerPoint.debugLabel) {
+        scrollTrackerPoint.debugLabel = document.createElement('div');
+        scrollTrackerPoint.debugLabel.classList.add('scroll-tracker-point');
+        scrollTrackerPoint.debugLabel.classList.add(`scroll-${componentId.replace('.', '-')}`);
+
+        const label = document.createElement('p');
+        label.innerHTML = componentId;
+
+        scrollTrackerPoint.debugLabel.appendChild(label);
+
+        document.body.appendChild(scrollTrackerPoint.debugLabel);
+      }
+
+      TweenLite.set(scrollTrackerPoint.debugLabel, {
+        height: `${scrollTrackerPoint.point.height}px`,
+        top: `${scrollTrackerPoint.point.position}px`,
+      });
+    }
+  }
+
+  /**
+   * @public
+   * @method removeComponentsFromScrollTracker
+   */
+  public removeComponentsFromScrollTracker(components): void {
+    Object.keys(components).forEach(componentId => {
+      const scrollTrackerPoint = this.scrollTrackerPoints[componentId];
+
+      if (scrollTrackerPoint) {
+        scrollTrackerPoint.point.removeEventListener(
+          ScrollTrackerEvent.ENTER_VIEW,
+          scrollTrackerPoint.enterViewListener,
+        );
+        scrollTrackerPoint.point.removeEventListener(
+          ScrollTrackerEvent.LEAVE_VIEW,
+          scrollTrackerPoint.leaveViewListener,
+        );
+        scrollTrackerPoint.point.removeEventListener(
+          ScrollTrackerEvent.SCROLLED_BEYOND,
+          scrollTrackerPoint.beyondViewListener,
+        );
+        // Remove the debug label
+        if (MubanTransitionContentPage.setDebugLabel) {
+          document.body.removeChild(
+            document.body.querySelector('.scroll-' + componentId.replace('.', '-')),
+          );
+        }
+        // Remove the point from the scroll tracker
+        this.scrollTracker.removePoint(scrollTrackerPoint.point);
+        // Remove the point from the object
+        delete this.scrollTrackerPoints[componentId];
+        // Reset the transition state
+        this.scrollComponents[componentId].transitionOut(true);
+        // Remove the block reference
+        delete this.scrollComponents[componentId];
+      } else {
+        this.log(
+          `[MubanTransitionContentPage] Component with id: [${componentId}] does not exist, unable to remove it`,
+        );
+      }
+    });
+  }
+
+  /**
+   * @private
+   * @description Recalculate the scrollTrackerPoints so the transitionIn happens on the right moment!
+   * @method updateScrollTrackerPoints
+   */
+  private updateScrollTrackerPoints(): void {
+    Object.keys(this.scrollTrackerPoints).forEach(componentId => {
+      // Get the correct data
+      const scrollTrackerPoint = this.scrollTrackerPoints[componentId].point;
+      const scrollComponent = this.scrollComponents[componentId];
+
+      // Fetch the new dimensions
+      const scrollTrackerData = this.getScrollTrackerData(scrollComponent);
+
+      scrollTrackerPoint.position = scrollTrackerData.yPosition;
+      scrollTrackerPoint.height = scrollTrackerData.height;
+
+      this.setDebugLabel(componentId);
+    });
+  }
+
+  /**
+   * @private
+   * @method handleResize
+   * @description When the window resize event is triggered  we need to recalculate the scrollTrackerPoints so the
+   * transitionIn happens on the right moments!
+   * @returns void
+   */
+  private handleResize(): void {
+    this.updateScrollTrackerPoints();
+  }
+
+  /**
+   * @private
+   * @method scrollToBlockFromUrl
+   */
+  private scrollToComponentFromUrl(): Promise<any> {
+    return new Promise(resolve => {
+      if (window.location.hash) {
+        Object.keys(this.scrollComponents).forEach((key: string) => {
+          if (
+            this.scrollComponents[key].element.getAttribute(
+              MubanTransitionVariable.scrollIdAttribute,
+            ) === window.location.hash.slice(1)
+          ) {
+            return ScrollUtils.scrollToPosition(
+              this.scrollComponents[key].element.getBoundingClientRect().top +
+                ScrollUtils.scrollTop,
+            );
+          }
+        });
+      } else {
+        resolve();
+      }
+    });
+  }
+
+  /**
+   * @private
+   * @method getScrollTrackerData
+   */
+  private getScrollTrackerData(
+    component: IMubanTransitionComponent,
+  ): { height: number; yPosition: number } {
+    let threshold = 0;
+    let yPosition = Math.round(component.element.getBoundingClientRect().top);
+
+    if (getComputedStyle(component.element).position !== 'fixed') {
+      yPosition += ScrollUtils.scrollTop;
+      threshold = window.innerHeight * component.transitionInThreshold;
+    }
+
+    return {
+      yPosition: Math.max(yPosition + threshold, 0),
+      height: component.element.offsetHeight - threshold,
+    };
+  }
+
+  /**
+   * @private
+   * @method handleComponentEnterView
+   * @param componentId
+   * @description When a scrollComponent enters the view we want to trigger the transition in method and mark the block
+   * as inView
+   * @returns void
+   */
+  private handleComponentEnterView(componentId): void {
+    if (this.scrollComponents[componentId]) {
+      this.scrollComponents[componentId].inView = true;
+
+      // Start Looping Animations
+      if (!this.scrollComponents[componentId].loopingAnimationsStarted) {
+        this.scrollComponents[componentId].startLoopingAnimations();
+      }
+
+      this.scrollComponents[componentId].transitionIn();
+    }
+  }
+
+  /**
+   * @private
+   * @method handleComponentLeaveView
+   * @description When a scrollComponent leaves the view we set the inView flag to false
+   * @param componentId
+   * @returns void
+   */
+  private handleComponentLeaveView(componentId): void {
+    this.scrollComponents[componentId].inView = false;
+
+    // Stop looping animations
+    this.scrollComponents[componentId].stopLoopingAnimations();
+  }
+
+  /**
+   * @private
+   * @method handleComponentBeyondView
+   * @param componentId
+   * @description When the scrollbar is dragged down super fast the default enter view event might not be
+   * triggered therefor we have a beyondView event! If it's already transitioned in it will do nothing! But if
+   * it's not transitioned in it will still try to transitionIn
+   * @returns void
+   */
+  private handleComponentBeyondView(componentId): void {
+    if (this.scrollComponents[componentId]) {
+      this.scrollComponents[componentId].inView = true;
+      this.scrollComponents[componentId].transitionIn();
+    }
+  }
+
+  public dispose() {
+    if (this.scrollComponents) {
+      this.removeComponentsFromScrollTracker(this.scrollComponents);
+      this.scrollComponents = null;
+    }
+
+    if (this.scrollTracker) {
+      this.scrollTracker.dispose();
+      this.scrollTracker = null;
+    }
+
+    super.dispose();
+  }
+}

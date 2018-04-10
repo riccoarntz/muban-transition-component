@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="./{{name_sc}}.scss">
+<script src="./{{name_pc}}.ts"></script>
+
+{{#comment}}
+  data-scroll-component: used for adding this block with its instance to the scrollTracker on the MubanContentPage
+  data-scroll-id: used for scrolling to this component (with generated id or so) when a hash change is triggered or set.
+{{/comment}}
+
+<section
+  data-component="{{name_sc}}"
+  class="{{name_sc}}"
+  \{{#if scrollComponent}}data-scroll-component\{{/if}}
+  \{{#if componentId}}data-scroll-id="\{{componentId}}"\{{/if}}>
+  <h1>{{name_sc}}</h1>
+</section>
