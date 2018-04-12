@@ -14,15 +14,15 @@ export default class {{name_pc}} extends abstractComponent(MubanTransitionCompon
    * @public
    * @method startLoopingAnimations
    */
-  public startLoopingAnimations():void {
-      super.startLoopingAnimations();
+  public startLoopingAnimation():void {
+      super.startLoopingAnimation();
   }
 
   /**
    * @public
-   * @method stopLoopingAnimations
+   * @method stopLoopingAnimation
    */
-   public stopLoopingAnimations():void {
-      super.stopLoopingAnimations();
+   public stopLoopingAnimation():void {
+      super.stopLoopingAnimation();
    }
 }

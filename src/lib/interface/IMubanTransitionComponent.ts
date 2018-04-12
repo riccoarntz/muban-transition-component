@@ -29,17 +29,17 @@ interface IMubanTransitionComponent extends IMubanTransitionCoreComponent {
 
   /**
    * @public
-   * @method startLoopingAnimations
+   * @method startLoopingAnimation
    * @description Starts the main loopingAnimation for the component
    */
-  startLoopingAnimations(): void;
+  startLoopingAnimation(): void;
 
   /**
    * @public
-   * @method stopLoopingAnimations
+   * @method stopLoopingAnimation
    * @description Stops the main loopingAnimation for the component
    */
-  stopLoopingAnimations(): void;
+  stopLoopingAnimation(): void;
 
   transitionInThreshold: number;
 }

@@ -1,0 +1,176 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: #6c757d;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+}
+
+h1,h2,h3,h4 {
+  padding: 0;
+  margin: 0;
+}
+
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.abs-fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+/* Buttons */
+.button {
+  position: relative;
+  text-align: center;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.primary-button {
+  border: 1px solid #41a6ff;
+  color: #41a6ff;
+  border-radius: .25rem;
+  font-weight: 400;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.primary-button:hover {
+  background-color: #41a6ff;
+  color: white;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #41a6ff;
+  color: white;
+  font-size: 18px;
+}
+
+.close-button:hover {
+  background-color: #1b94ff;
+}
+
+/* Heading */
+.heading-01 {
+  font-size: 8vw;
+  font-weight: 100;
+}
+
+.heading-02 {
+  font-size: 4vw;
+  font-weight: 100;
+}
+
+.heading-03 {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.app {
+  position: relative;
+}
+
+.page-holder {
+  padding-top: 55px;
+}
+
+.block-component {
+  position: relative;
+}
+
+
+.site-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #212529;
+  padding: 0 1rem;
+  height: 55px;
+  color: #41a6ff;
+  line-height: 55px;
+  z-index: 1;
+}
+
+.site-header-title {
+  font-weight: 100;
+  font-size: 22px;
+}
+
+.site-header-title span {
+  color: white;
+  font-size: 20px;
+}
+
+/* Dummy Foo */
+.dummy-foo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  white-space: nowrap;
+  color: #41a6ff;
+}
+
+.dummy-foo-bg {
+  background-color: #2b3035;
+}
+
+.dummy-foo:nth-child(n+2) {
+  color: #6c757d;
+}
+
+.dummy-foo:nth-child(n+2) .dummy-foo-bg {
+  background-color: white;
+}
+
+  /* Dummy Foo POPUP */
+.dummy-foo-popup {
+  width: 50%;
+  height: 50%;
+  background-color: #212529;
+  overflow: hidden;
+  border-radius: .25rem;
+}
+
+.dummy-foo-popup .heading-02 {
+  color: white;
+}
+
+.looping-animation-title {
+  margin: 50px 0 0;
+  color: white;
+}
+
+.looping-animation {
+  width: 10px;
+  height: 10px;
+  border: 20px solid #212529;
+  display: inline-block;
+  border-radius: 100%;
+  background-color: white;
+}
+
+
+.dummy-foo:nth-child(n+2) .looping-animation-title {
+  color: inherit;
+}

@@ -36,17 +36,19 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreComp
 
     /**
      * @public
-     * @method startLoopingAnimations
+     * @method startLoopingAnimation
      */
-    public startLoopingAnimations(): void {
+    public startLoopingAnimation(): void {
+      this.transitionController.startLoopingAnimation();
       this.loopingAnimationsStarted = true;
     }
 
     /**
      * @public
-     * @method stopLoopingAnimations
+     * @method stopLoopingAnimation
      */
-    public stopLoopingAnimations(): void {
+    public stopLoopingAnimation(): void {
+      this.transitionController.stopLoopingAnimation();
       this.loopingAnimationsStarted = false;
     }
   };

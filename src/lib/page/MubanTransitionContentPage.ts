@@ -50,7 +50,8 @@ export default class MubanTransitionContentPage extends base {
     );
     this.getElements(`[${MubanTransitionVariable.componentAttribute}]`).forEach(element => {
       const component = <IMubanTransitionComponent>getComponentForElement(element);
-      if (component) {
+
+      if (component && component.dispatcher) {
         this.disposable.add(
           new NativeEventListener(
             component.dispatcher,
@@ -138,13 +139,15 @@ export default class MubanTransitionContentPage extends base {
         scrollTrackerPoint.debugLabel.classList.add(`scroll-${componentId.replace('.', '-')}`);
 
         const label = document.createElement('p');
-        label.innerHTML = componentId;
-
+        label.innerHTML = `scroll-tracker-point:${componentId}`;
         scrollTrackerPoint.debugLabel.appendChild(label);
 
         document.body.appendChild(scrollTrackerPoint.debugLabel);
       }
 
+      scrollTrackerPoint.debugLabel.style.position = `absolute`;
+      scrollTrackerPoint.debugLabel.style.borderTop = `1px solid red`;
+      scrollTrackerPoint.debugLabel.style.borderBottom = `1px solid red`;
       scrollTrackerPoint.debugLabel.style.height = `${scrollTrackerPoint.point.height}px`;
       scrollTrackerPoint.debugLabel.style.top = `${scrollTrackerPoint.point.position}px`;
     }
@@ -227,7 +230,7 @@ export default class MubanTransitionContentPage extends base {
 
   /**
    * @private
-   * @method scrollToBlockFromUrl
+   * @method scrollToComponentFromUrl
    */
   private scrollToComponentFromUrl(): void {
     if (window.location.hash) {
@@ -280,7 +283,7 @@ export default class MubanTransitionContentPage extends base {
 
       // Start Looping Animations
       if (!this.scrollComponents[componentId].loopingAnimationsStarted) {
-        this.scrollComponents[componentId].startLoopingAnimations();
+        this.scrollComponents[componentId].startLoopingAnimation();
       }
 
       this.scrollComponents[componentId].transitionIn();
@@ -298,7 +301,7 @@ export default class MubanTransitionContentPage extends base {
     this.scrollComponents[componentId].inView = false;
 
     // Stop looping animations
-    this.scrollComponents[componentId].stopLoopingAnimations();
+    this.scrollComponents[componentId].stopLoopingAnimation();
   }
 
   /**
@@ -313,6 +316,7 @@ export default class MubanTransitionContentPage extends base {
   private handleComponentBeyondView(componentId): void {
     if (this.scrollComponents[componentId]) {
       this.scrollComponents[componentId].inView = true;
+      // todo maybe seek to progress(1) to avoid (unnecessary) performance issue's
       this.scrollComponents[componentId].transitionIn();
     }
   }
