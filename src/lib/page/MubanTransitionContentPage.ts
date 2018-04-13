@@ -70,9 +70,6 @@ export default class MubanTransitionContentPage extends base {
 
     // Add al the components to the scroll tracker
     this.addComponentsToScrollTracker(this.scrollComponents);
-
-    // Scroll to a component based on the #
-    this.scrollToComponentFromUrl();
   }
 
   /**
@@ -145,9 +142,6 @@ export default class MubanTransitionContentPage extends base {
         document.body.appendChild(scrollTrackerPoint.debugLabel);
       }
 
-      scrollTrackerPoint.debugLabel.style.position = `absolute`;
-      scrollTrackerPoint.debugLabel.style.borderTop = `1px solid red`;
-      scrollTrackerPoint.debugLabel.style.borderBottom = `1px solid red`;
       scrollTrackerPoint.debugLabel.style.height = `${scrollTrackerPoint.point.height}px`;
       scrollTrackerPoint.debugLabel.style.top = `${scrollTrackerPoint.point.position}px`;
     }
@@ -226,26 +220,6 @@ export default class MubanTransitionContentPage extends base {
    */
   private handleResize(): void {
     this.updateScrollTrackerPoints();
-  }
-
-  /**
-   * @private
-   * @method scrollToComponentFromUrl
-   */
-  private scrollToComponentFromUrl(): void {
-    if (window.location.hash) {
-      Object.keys(this.scrollComponents).forEach((key: string) => {
-        if (
-          this.scrollComponents[key].element.getAttribute(
-            MubanTransitionVariable.scrollIdAttribute,
-          ) === window.location.hash.slice(1)
-        ) {
-          ScrollUtils.scrollToPosition(
-            this.scrollComponents[key].element.getBoundingClientRect().top + ScrollUtils.scrollTop,
-          );
-        }
-      });
-    }
   }
 
   /**
