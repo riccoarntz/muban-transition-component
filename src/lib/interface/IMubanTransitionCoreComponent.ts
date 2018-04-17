@@ -1,6 +1,6 @@
 import DisposableHelper from '../event/DisposableHelper';
 import EventDispatcher from 'seng-event/lib/EventDispatcher';
-import ICoreComponent from 'lib/interface/ICoreComponent';
+import ICoreComponent from 'muban-core/lib/interface/ICoreComponent';
 
 interface IMubanTransitionCoreComponent extends ICoreComponent {
   eventNamespace: string;

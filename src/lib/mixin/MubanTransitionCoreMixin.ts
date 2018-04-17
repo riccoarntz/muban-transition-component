@@ -1,7 +1,7 @@
 import EventDispatcher from 'seng-event';
 import DisposableHelper from '../event/DisposableHelper';
 import MubanTransitionVariable from '../data/MubanTransitionVariable';
-import ICoreComponent from 'lib/interface/ICoreComponent';
+import ICoreComponent from 'muban-core/lib/interface/ICoreComponent';
 
 function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Base: TBase) {
   return class MubanTransitionCoreMixin extends Base {

@@ -3362,9 +3362,9 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-muban-core@^1.8.2:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/muban-core/-/muban-core-1.8.2.tgz#37e4023ebacd0c6db49f96a3383536e49a70d9ec"
+muban-core@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/muban-core/-/muban-core-1.8.3.tgz#1aa0b90eb423a525e4de3ebb261abf56233dc64f"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.35"
     loader-utils "^1.1.0"

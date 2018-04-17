@@ -1,4 +1,3 @@
-import TestClass from '../src/lib/TestClass';
 import {expect} from 'chai';
 
 describe('TestClass', () => {
