@@ -7,12 +7,12 @@ import CommonEvent from 'seng-event/lib/event/CommonEvent';
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
 import CoreComponent from 'muban-core/lib/CoreComponent';
 import mubanTransitionCoreMixin from '../mixin/MubanTransitionCoreMixin';
-import IMubanTransitionComponent from '../interface/IMubanTransitionComponent';
+import IMubanTransitionMixin from '../interface/IMubanTransitionMixin';
 import MubanTransitionVariable from '../data/MubanTransitionVariable';
 import bows from 'bows';
-import IMubanTransitionCoreComponent from 'lib/interface/IMubanTransitionCoreComponent';
+import IMubanTransitionCoreMixin from '../interface/IMubanTransitionCoreMixin';
 
-export const base: Constructor<IMubanTransitionCoreComponent> &
+export const base: Constructor<IMubanTransitionCoreMixin> &
   typeof CoreComponent = mubanTransitionCoreMixin(CoreComponent);
 export default class MubanTransitionContentPage extends base {
   /**
@@ -49,7 +49,7 @@ export default class MubanTransitionContentPage extends base {
       new NativeEventListener(window, 'resize', debounce(this.handleResize.bind(this), 100)),
     );
     this.getElements(`[${MubanTransitionVariable.componentAttribute}]`).forEach(element => {
-      const component = <IMubanTransitionComponent>getComponentForElement(element);
+      const component = <IMubanTransitionMixin>getComponentForElement(element);
 
       if (component && component.dispatcher) {
         this.disposable.add(
@@ -227,7 +227,7 @@ export default class MubanTransitionContentPage extends base {
    * @method getScrollTrackerData
    */
   private getScrollTrackerData(
-    component: IMubanTransitionComponent,
+    component: IMubanTransitionMixin,
   ): { height: number; yPosition: number } {
     let threshold = 0;
     let yPosition = Math.round(component.element.getBoundingClientRect().top);

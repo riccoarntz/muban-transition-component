@@ -1,9 +1,11 @@
-import MubanTransitionComponent from '../../../../../src/lib/component/MubanTransitionComponent';
-import DummyFooTransitionController from './DummyFooTransitionController';
+import CoreComponent from 'muban-core/lib/CoreComponent';
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
 import DummyFooPopup from '../../DummyFooPopup/DummyFooPopup';
+import DummyFooTransitionController from './DummyFooTransitionController';
+import mubanTransitionMixin from '../../../../../src/lib/mixin/MubanTransitionMixin';
+import mubanTransitionCoreMixin from '../../../../../src/lib/mixin/MubanTransitionCoreMixin';
 
-export default class DummyFoo extends MubanTransitionComponent {
+export default class DummyFoo extends mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent)) {
   static displayName: string = 'dummy-foo';
   public transitionController: DummyFooTransitionController;
 

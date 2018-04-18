@@ -1,16 +1,14 @@
 import AbstractTransitionController from 'transition-controller';
-import IMubanTransitionCoreComponent from '../interface/IMubanTransitionCoreComponent';
-import IMubanTransitionComponent from '../interface/IMubanTransitionComponent';
+import IMubanTransitionCoreMixin from '../interface/IMubanTransitionCoreMixin';
+import IMubanTransitionMixin from '../interface/IMubanTransitionMixin';
 import DisposableHelper from '../event/DisposableHelper';
 import EventDispatcher from 'seng-event/lib/EventDispatcher';
 EventDispatcher;
 DisposableHelper;
 
-function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreComponent>>(
-  Base: TBase,
-) {
+function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixin>>(Base: TBase) {
   return class MubanTransitionMixin extends Base {
-    public transitionController: AbstractTransitionController<IMubanTransitionComponent>;
+    public transitionController: AbstractTransitionController<IMubanTransitionMixin>;
     public loopingAnimationsStarted: boolean = false;
     public transitionInThreshold: number = 0.25;
 

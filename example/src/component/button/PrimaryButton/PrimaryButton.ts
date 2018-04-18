@@ -1,7 +1,9 @@
-import MubanTransitionComponent from '../../../../../src/lib/component/MubanTransitionComponent';
+import CoreComponent from 'muban-core/lib/CoreComponent';
+import mubanTransitionMixin from '../../../../../src/lib/mixin/MubanTransitionMixin';
+import mubanTransitionCoreMixin from '../../../../../src/lib/mixin/MubanTransitionCoreMixin';
 import PrimaryButtonTransitionController from './PrimaryButtonTransitionController';
 
-export default class PrimaryButton extends MubanTransitionComponent {
+export default class PrimaryButton extends mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent)) {
   static displayName: string = 'primary-button';
   public transitionController: PrimaryButtonTransitionController;
 

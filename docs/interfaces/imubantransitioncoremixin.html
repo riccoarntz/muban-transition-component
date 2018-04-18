@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ICoreComponent | muban-transition-component</title>
+	<title>IMubanTransitionCoreMixin | muban-transition-component</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="icorecomponent.html">ICoreComponent</a>
+					<a href="imubantransitioncoremixin.html">IMubanTransitionCoreMixin</a>
 				</li>
 			</ul>
-			<h1>Interface ICoreComponent</h1>
+			<h1>Interface IMubanTransitionCoreMixin</h1>
 		</div>
 	</div>
 </header>
@@ -70,13 +70,13 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">IDisposable</span>
+						<span class="tsd-signature-type">ICoreComponent</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">ICoreComponent</span>
+								<span class="target">IMubanTransitionCoreMixin</span>
 								<ul class="tsd-hierarchy">
 									<li>
-										<a href="imubantransitioncorecomponent.html" class="tsd-signature-type">IMubanTransitionCoreComponent</a>
+										<a href="imubantransitionmixin.html" class="tsd-signature-type">IMubanTransitionMixin</a>
 									</li>
 								</ul>
 							</li>
@@ -91,16 +91,20 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="icorecomponent.html#element" class="tsd-kind-icon">element</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imubantransitioncoremixin.html#dispatcher" class="tsd-kind-icon">dispatcher</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imubantransitioncoremixin.html#displayname" class="tsd-kind-icon">display<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imubantransitioncoremixin.html#disposable" class="tsd-kind-icon">disposable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitioncoremixin.html#element" class="tsd-kind-icon">element</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imubantransitioncoremixin.html#eventnamespace" class="tsd-kind-icon">event<wbr>Namespace</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="icorecomponent.html#dispose" class="tsd-kind-icon">dispose</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter"><a href="icorecomponent.html#getelement" class="tsd-kind-icon">get<wbr>Element</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter"><a href="icorecomponent.html#getelements" class="tsd-kind-icon">get<wbr>Elements</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="icorecomponent.html#isdisposed" class="tsd-kind-icon">is<wbr>Disposed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitioncoremixin.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited"><a href="imubantransitioncoremixin.html#getelement" class="tsd-kind-icon">get<wbr>Element</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited"><a href="imubantransitioncoremixin.html#getelements" class="tsd-kind-icon">get<wbr>Elements</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitioncoremixin.html#isdisposed" class="tsd-kind-icon">is<wbr>Disposed</a></li>
 							</ul>
 						</section>
 					</div>
@@ -109,17 +113,58 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="dispatcher" class="tsd-anchor"></a>
+					<h3>dispatcher</h3>
+					<div class="tsd-signature tsd-kind-icon">dispatcher<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventDispatcher</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionCoreMixin.ts#L8">lib/interface/IMubanTransitionCoreMixin.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="displayname" class="tsd-anchor"></a>
+					<h3>display<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">display<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionCoreMixin.ts#L9">lib/interface/IMubanTransitionCoreMixin.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="disposable" class="tsd-anchor"></a>
+					<h3>disposable</h3>
+					<div class="tsd-signature tsd-kind-icon">disposable<span class="tsd-signature-symbol">:</span> <a href="../classes/disposablehelper.html" class="tsd-signature-type">DisposableHelper</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionCoreMixin.ts#L7">lib/interface/IMubanTransitionCoreMixin.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="element" class="tsd-anchor"></a>
 					<h3>element</h3>
 					<div class="tsd-signature tsd-kind-icon">element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from ICoreComponent.element</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/a0cdcf4/src/lib/interface/ICoreComponent.ts#L4">lib/interface/ICoreComponent.ts:4</a></li>
+							<li>Defined in /Users/riccoarntz/Projects/frontend/modules/muban-transition-component/node_modules/muban-core/lib/interface/ICoreComponent.d.ts:3</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="eventnamespace" class="tsd-anchor"></a>
+					<h3>event<wbr>Namespace</h3>
+					<div class="tsd-signature tsd-kind-icon">event<wbr>Namespace<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionCoreMixin.ts#L6">lib/interface/IMubanTransitionCoreMixin.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
 					<a name="dispose" class="tsd-anchor"></a>
@@ -144,17 +189,18 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited">
 					<a name="getelement" class="tsd-anchor"></a>
 					<h3>get<wbr>Element</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Element&lt;T&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, container<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from ICoreComponent.getElement</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/a0cdcf4/src/lib/interface/ICoreComponent.ts#L12">lib/interface/ICoreComponent.ts:12</a></li>
+									<li>Defined in /Users/riccoarntz/Projects/frontend/modules/muban-transition-component/node_modules/muban-core/lib/interface/ICoreComponent.d.ts:11</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -183,17 +229,18 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited">
 					<a name="getelements" class="tsd-anchor"></a>
 					<h3>get<wbr>Elements</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Elements&lt;T&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, container<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from ICoreComponent.getElements</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/a0cdcf4/src/lib/interface/ICoreComponent.ts#L20">lib/interface/ICoreComponent.ts:20</a></li>
+									<li>Defined in /Users/riccoarntz/Projects/frontend/modules/muban-transition-component/node_modules/muban-core/lib/interface/ICoreComponent.d.ts:19</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -238,7 +285,7 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>After <a href="icorecomponent.html#dispose">dispose</a> has been called, this method returns true.
+									<p>After <a href="imubantransitioncoremixin.html#dispose">dispose</a> has been called, this method returns true.
 									Use this method to determine whether dispose() should be run again.</p>
 								</div>
 							</div>
@@ -262,9 +309,6 @@
 						<a href="../classes/disposablehelper.html" class="tsd-kind-icon">Disposable<wbr>Helper</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="../classes/mubantransitioncomponent.html" class="tsd-kind-icon">Muban<wbr>Transition<wbr>Component</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="../classes/mubantransitioncontentpage.html" class="tsd-kind-icon">Muban<wbr>Transition<wbr>Content<wbr>Page</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -279,32 +323,41 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="icorecomponent.html" class="tsd-kind-icon">ICore<wbr>Component</a>
+						<a href="imubantransitioncoremixin.html" class="tsd-kind-icon">IMuban<wbr>Transition<wbr>Core<wbr>Mixin</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="icorecomponent.html#element" class="tsd-kind-icon">element</a>
+								<a href="imubantransitioncoremixin.html#dispatcher" class="tsd-kind-icon">dispatcher</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="imubantransitioncoremixin.html#displayname" class="tsd-kind-icon">display<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="imubantransitioncoremixin.html#disposable" class="tsd-kind-icon">disposable</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="imubantransitioncoremixin.html#element" class="tsd-kind-icon">element</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="imubantransitioncoremixin.html#eventnamespace" class="tsd-kind-icon">event<wbr>Namespace</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-								<a href="icorecomponent.html#dispose" class="tsd-kind-icon">dispose</a>
+								<a href="imubantransitioncoremixin.html#dispose" class="tsd-kind-icon">dispose</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
-								<a href="icorecomponent.html#getelement" class="tsd-kind-icon">get<wbr>Element</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited">
+								<a href="imubantransitioncoremixin.html#getelement" class="tsd-kind-icon">get<wbr>Element</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
-								<a href="icorecomponent.html#getelements" class="tsd-kind-icon">get<wbr>Elements</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited">
+								<a href="imubantransitioncoremixin.html#getelements" class="tsd-kind-icon">get<wbr>Elements</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-								<a href="icorecomponent.html#isdisposed" class="tsd-kind-icon">is<wbr>Disposed</a>
+								<a href="imubantransitioncoremixin.html#isdisposed" class="tsd-kind-icon">is<wbr>Disposed</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface">
-						<a href="imubantransitioncomponent.html" class="tsd-kind-icon">IMuban<wbr>Transition<wbr>Component</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="imubantransitioncorecomponent.html" class="tsd-kind-icon">IMuban<wbr>Transition<wbr>Core<wbr>Component</a>
+						<a href="imubantransitionmixin.html" class="tsd-kind-icon">IMuban<wbr>Transition<wbr>Mixin</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="../globals.html#base" class="tsd-kind-icon">base</a>
@@ -314,9 +367,6 @@
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="../globals.html#mubantransitionmixin" class="tsd-kind-icon">muban<wbr>Transition<wbr>Mixin</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#scrollto" class="tsd-kind-icon">scroll<wbr>To</a>
 					</li>
 				</ul>
 			</nav>
