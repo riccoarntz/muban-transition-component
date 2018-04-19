@@ -1,7 +1,8 @@
 import MubanTransitionController from '../../../../src/lib/util/MubanTransitionController';
 import { Expo, Back } from 'gsap';
+import DummyFooPopup from './DummyFooPopup';
 
-class DummyFooPopupTransitionController extends MubanTransitionController {
+class DummyFooPopupTransitionController extends MubanTransitionController<DummyFooPopup> {
   /**
    * @public
    * @method setupTransitionInTimeline

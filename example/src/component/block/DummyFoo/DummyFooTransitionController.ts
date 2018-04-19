@@ -1,26 +1,18 @@
 import MubanTransitionController from '../../../../../src/lib/util/MubanTransitionController';
 import { Expo } from 'gsap';
 import TransitionDirection from 'transition-controller/lib/enum/TransitionDirection';
+import DummyFoo from './DummyFoo';
 
-class DummyFooTransitionController extends MubanTransitionController {
+class DummyFooTransitionController extends MubanTransitionController<DummyFoo> {
 
-  /**
-   * @public
-   * @method init
-   */
-  public init():void
-  {
-    // todo needs to move to init
-    super.init();
-
-    this.setupLoopingAnimationTimeline();
-  }
   /**
    * @public
    * @method setupTransitionInTimeline
    * @description Use this method to setup your transition in timeline
    * */
   protected setupTransitionInTimeline(): void {
+    this.parentController.test();
+
     const textContent:HTMLElement = this.parentController.element.querySelector('.js-text-content');
     const primaryButton:HTMLElement = this.parentController.element.querySelector('.js-button-open');
     const loopingTitle:HTMLElement = this.parentController.element.querySelector('.js-looping-title');

@@ -3,7 +3,7 @@ const path = require('path');
 const rimraf = require('rimraf');
 const nrc = require('node-run-cmd');
 
-export const actionType = {
+const actionType = {
   REPLACE: 'replace',
   REMOVE: 'remove',
   RUN: 'run',
@@ -13,7 +13,7 @@ export const actionType = {
  * @param source
  * @param target
  */
-export const replaceFile = (source, target) => {
+const replaceFile = (source, target) => {
   return fs.copy(`${__dirname}/${source}`, path.resolve(target), {
     overwrite: true,
   });
@@ -23,7 +23,7 @@ export const replaceFile = (source, target) => {
  * Remove a path
  * @param target
  */
-export const removePath = (target) => {
+const removePath = (target) => {
   return new Promise((resolve, reject) => {
     rimraf(path.resolve(target), {}, error => {
       if (error) {
@@ -39,7 +39,7 @@ export const removePath = (target) => {
  * Run a command
  * @param command
  */
-export const runCommand = (command) => {
+const runCommand = (command) => {
   return new Promise((resolve, reject) => {
     nrc.run(command, {
       shell: true,
@@ -50,7 +50,7 @@ export const runCommand = (command) => {
 };
 
 // Parse the actions
-export const parseActions = (actions) => {
+const parseActions = (actions) => {
   return actions.map(action => () => {
     console.log(`Running - "${action.label}"`);
     switch (action.type) {
@@ -70,7 +70,7 @@ export const parseActions = (actions) => {
 };
 
 // Run promises in a loop after each other
-export const sequentialPromises = (promises) => {
+const sequentialPromises = (promises) => {
   return new Promise((resolve, reject) => {
     const promiseCount = promises.length;
     const resolvePromise = promise =>
@@ -85,4 +85,11 @@ export const sequentialPromises = (promises) => {
       resolve();
     }
   });
+};
+
+
+module.exports = {
+  sequentialPromises,
+  parseActions,
+  actionType,
 };

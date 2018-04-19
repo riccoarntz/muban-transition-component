@@ -1,6 +1,7 @@
 import { MubanTransitionController } from 'muban-transition-component';
+import {{name_pc}} from './{{name_pc}}';
 
-class {{name_pc}}TransitionController extends MubanTransitionController
+class {{name_pc}}TransitionController extends MubanTransitionController<{{name_pc}}>
 {
 	/**
 	 * @public

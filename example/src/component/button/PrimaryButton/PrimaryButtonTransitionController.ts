@@ -1,7 +1,8 @@
 import MubanTransitionController from '../../../../../src/lib/util/MubanTransitionController';
 import { Expo } from 'gsap';
+import PrimaryButton from './PrimaryButton';
 
-class PrimaryButtonTransitionController extends MubanTransitionController {
+class PrimaryButtonTransitionController extends MubanTransitionController<PrimaryButton> {
   /**
    * @public
    * @method setupTransitionInTimeline

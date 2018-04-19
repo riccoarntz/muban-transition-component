@@ -1,6 +1,15 @@
 <link rel="stylesheet" href="./{{name_sc}}.scss">
 <script src="./{{name_pc}}.ts"></script>
 
-<div data-component="{{name_sc}}" class="{{name_sc}}" {{#if scrollComponent}}data-scroll-component{{/if}}>
-  <h1>{{name_sc}}</h1>
+{{#comment}}
+data-scroll-component: used for adding this component with its instance to the scrollTracker on the
+MubanTransitionContentPage
+{{/comment}}
+
+<div
+  data-component="{{name_sc}}"
+  class="{{name_sc}}"
+  \{{#if scrollComponent}}data-scroll-component\{{/if}}
+<h1>{{name_sc}}</h1>
 </div>
+

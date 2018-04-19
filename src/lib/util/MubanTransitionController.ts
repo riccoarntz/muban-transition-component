@@ -4,9 +4,9 @@ import isElement from 'lodash/isElement';
 import { TimelineLite, TimelineMax } from 'gsap';
 import { IMubanTransitionMixin } from '../interface/IMubanTransitionMixin';
 
-export default abstract class MubanTransitionController extends AbstractTransitionController<
-  IMubanTransitionMixin
-> {
+export default abstract class MubanTransitionController<
+  T extends IMubanTransitionMixin
+> extends AbstractTransitionController<T> {
   /**
    * @protected
    * @method getSubTimelineByComponent
@@ -15,15 +15,15 @@ export default abstract class MubanTransitionController extends AbstractTransiti
    * @returns {gsap.TimelineLite | gsap.TimelineMax}
    */
   protected getSubTimelineByComponent(
-    component: HTMLElement | IMubanTransitionMixin,
+    component: HTMLElement | T,
     direction: TransitionDirection,
   ): TimelineLite | TimelineMax {
-    let instance: IMubanTransitionMixin;
+    let instance: T;
 
     if (isElement(component)) {
-      instance = getComponentForElement<IMubanTransitionMixin>(<HTMLElement>component);
+      instance = getComponentForElement<T>(<HTMLElement>component);
     } else {
-      instance = <IMubanTransitionMixin>component;
+      instance = <T>component;
     }
 
     // Return the correct timeline

@@ -20,6 +20,16 @@ export default class DummyFoo extends mubanTransitionMixin(mubanTransitionCoreMi
   }
 
   /**
+   * @public
+   * @method test
+   */
+  public test():void
+  {
+
+  }
+
+
+  /**
    * @private
    * @method addEventListeners
    */

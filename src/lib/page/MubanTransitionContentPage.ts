@@ -20,6 +20,14 @@ export default class MubanTransitionContentPage extends base {
    */
   private log: bows = new bows('MubanTransitionContentPage');
 
+  /**
+   * @description borderColors for debug-label(scroll-tracker-points)
+   */
+  public static debugBorderColor: string = 'red';
+
+  /**
+   * @description enable scroll-tracker-point debug-labels
+   */
   public static setDebugLabel: boolean = false;
   /**
    * @description The collection of scroll components
@@ -137,8 +145,17 @@ export default class MubanTransitionContentPage extends base {
 
         const label = document.createElement('p');
         label.innerHTML = `scroll-tracker-point:${componentId}`;
-        scrollTrackerPoint.debugLabel.appendChild(label);
 
+        scrollTrackerPoint.debugLabel.style.position = `absolute`;
+        scrollTrackerPoint.debugLabel.style.zIndex = '99999';
+        scrollTrackerPoint.debugLabel.style.borderTop = `1px solid ${
+          MubanTransitionContentPage.debugBorderColor
+        }`;
+        scrollTrackerPoint.debugLabel.style.borderBottom = `1px solid ${
+          MubanTransitionContentPage.debugBorderColor
+        }`;
+
+        scrollTrackerPoint.debugLabel.appendChild(label);
         document.body.appendChild(scrollTrackerPoint.debugLabel);
       }
 

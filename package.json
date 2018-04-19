@@ -105,6 +105,6 @@
     "seng-disposable": "^1.1.3",
     "seng-event": "^1.2.3",
     "seng-scroll-tracker": "^1.1.2",
-    "transition-controller": "^0.1.10"
+    "transition-controller": "^0.1.12"
   }
 }

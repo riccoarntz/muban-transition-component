@@ -1,4 +1,4 @@
-import { actionType, parseActions, sequentialPromises } from './index';
+const { actionType, parseActions, sequentialPromises } = require('./index');
 const confirm = require('confirm-simple');
 
 // Actions
