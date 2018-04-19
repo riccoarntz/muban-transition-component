@@ -11,12 +11,6 @@ h1,h2,h3,h4 {
   margin: 0;
 }
 
-.scroll-tracker-point {
-  position: absolute;
-  border-top: 1px solid red;
-  border-bottom: 1px solid red;
-}
-
 .abs-center {
   position: absolute;
   left: 50%;

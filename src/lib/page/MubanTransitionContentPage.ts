@@ -32,7 +32,7 @@ export default class MubanTransitionContentPage extends base {
   /**
    * @description The collection of scroll components
    */
-  private scrollComponents = {};
+  private scrollComponents: { [key: string]: IMubanTransitionMixin } = {};
   /**
    * @public
    * @property scrollTracker
@@ -56,25 +56,27 @@ export default class MubanTransitionContentPage extends base {
     this.disposable.add(
       new NativeEventListener(window, 'resize', debounce(this.handleResize.bind(this), 100)),
     );
-    this.getElements(`[${MubanTransitionVariable.componentAttribute}]`).forEach(element => {
-      const component = <IMubanTransitionMixin>getComponentForElement(element);
+    this.getElements(`[${MubanTransitionVariable.componentAttribute}]`).forEach(
+      (element: HTMLElement) => {
+        const component = <IMubanTransitionMixin>getComponentForElement(element);
 
-      if (component && component.dispatcher) {
-        this.disposable.add(
-          new NativeEventListener(
-            component.dispatcher,
-            CommonEvent.RESIZE,
-            this.handleResize.bind(this),
-          ),
-        );
+        if (component && component.dispatcher) {
+          this.disposable.add(
+            new NativeEventListener(
+              component.dispatcher,
+              CommonEvent.RESIZE,
+              this.handleResize.bind(this),
+            ),
+          );
 
-        if (element.hasAttribute(MubanTransitionVariable.scrollComponentAttribute)) {
-          this.scrollComponents[
-            component.constructor['displayName'] + component.eventNamespace
-          ] = component;
+          if (element.hasAttribute(MubanTransitionVariable.scrollComponentAttribute)) {
+            this.scrollComponents[
+              component.constructor['displayName'] + component.eventNamespace
+            ] = component;
+          }
         }
-      }
-    });
+      },
+    );
 
     // Add al the components to the scroll tracker
     this.addComponentsToScrollTracker(this.scrollComponents);
@@ -84,8 +86,8 @@ export default class MubanTransitionContentPage extends base {
    * @public
    * @method addComponentsToScrollTracker
    */
-  public addComponentsToScrollTracker(components): void {
-    Object.keys(components).forEach(componentId => {
+  public addComponentsToScrollTracker(components: { [key: string]: IMubanTransitionMixin }): void {
+    Object.keys(components).forEach((componentId: string) => {
       // Check if it's not already added!
       if (!this.scrollTrackerPoints[componentId]) {
         // Store the ref
@@ -168,8 +170,10 @@ export default class MubanTransitionContentPage extends base {
    * @public
    * @method removeComponentsFromScrollTracker
    */
-  public removeComponentsFromScrollTracker(components): void {
-    Object.keys(components).forEach(componentId => {
+  public removeComponentsFromScrollTracker(components: {
+    [key: string]: IMubanTransitionMixin;
+  }): void {
+    Object.keys(components).forEach((componentId: string) => {
       const scrollTrackerPoint = this.scrollTrackerPoints[componentId];
 
       if (scrollTrackerPoint) {
@@ -213,7 +217,7 @@ export default class MubanTransitionContentPage extends base {
    * @method updateScrollTrackerPoints
    */
   private updateScrollTrackerPoints(): void {
-    Object.keys(this.scrollTrackerPoints).forEach(componentId => {
+    Object.keys(this.scrollTrackerPoints).forEach((componentId: string) => {
       // Get the correct data
       const scrollTrackerPoint = this.scrollTrackerPoints[componentId].point;
       const scrollComponent = this.scrollComponents[componentId];
@@ -268,12 +272,12 @@ export default class MubanTransitionContentPage extends base {
    * as inView
    * @returns void
    */
-  private handleComponentEnterView(componentId): void {
+  private handleComponentEnterView(componentId: string): void {
     if (this.scrollComponents[componentId]) {
       this.scrollComponents[componentId].inView = true;
 
       // Start Looping Animations
-      if (!this.scrollComponents[componentId].loopingAnimationsStarted) {
+      if (!this.scrollComponents[componentId].transitionController.loopingAnimationStarted) {
         this.scrollComponents[componentId].startLoopingAnimation();
       }
 
@@ -288,7 +292,7 @@ export default class MubanTransitionContentPage extends base {
    * @param componentId
    * @returns void
    */
-  private handleComponentLeaveView(componentId): void {
+  private handleComponentLeaveView(componentId: string): void {
     this.scrollComponents[componentId].inView = false;
 
     // Stop looping animations
@@ -304,7 +308,7 @@ export default class MubanTransitionContentPage extends base {
    * it's not transitioned in it will still try to transitionIn
    * @returns void
    */
-  private handleComponentBeyondView(componentId): void {
+  private handleComponentBeyondView(componentId: string): void {
     if (this.scrollComponents[componentId]) {
       this.scrollComponents[componentId].inView = true;
       // todo maybe seek to progress(1) to avoid (unnecessary) performance issue's

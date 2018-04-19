@@ -11,6 +11,7 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixi
     public transitionController: AbstractTransitionController<IMubanTransitionMixin>;
     public loopingAnimationsStarted: boolean = false;
     public transitionInThreshold: number = 0.25;
+    public inView: boolean = false;
 
     constructor(...args: any[]) {
       super(...args);

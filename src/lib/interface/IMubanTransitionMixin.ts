@@ -42,4 +42,11 @@ export interface IMubanTransitionMixin extends IMubanTransitionCoreMixin {
   stopLoopingAnimation(): void;
 
   transitionInThreshold: number;
+
+  /**
+   * @public
+   * @property inView
+   * @description A flag that keeps track if a scrollComponent is in the view
+   */
+  inView: boolean;
 }
