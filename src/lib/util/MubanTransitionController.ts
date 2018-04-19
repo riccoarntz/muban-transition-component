@@ -2,7 +2,7 @@ import AbstractTransitionController, { TransitionDirection } from 'transition-co
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
 import isElement from 'lodash/isElement';
 import { TimelineLite, TimelineMax } from 'gsap';
-import IMubanTransitionMixin from '../interface/IMubanTransitionMixin';
+import { IMubanTransitionMixin } from '../interface/IMubanTransitionMixin';
 
 export default abstract class MubanTransitionController extends AbstractTransitionController<
   IMubanTransitionMixin

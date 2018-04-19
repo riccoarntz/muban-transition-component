@@ -7,10 +7,10 @@ import CommonEvent from 'seng-event/lib/event/CommonEvent';
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
 import CoreComponent from 'muban-core/lib/CoreComponent';
 import mubanTransitionCoreMixin from '../mixin/MubanTransitionCoreMixin';
-import IMubanTransitionMixin from '../interface/IMubanTransitionMixin';
+import { IMubanTransitionMixin } from '../interface/IMubanTransitionMixin';
 import MubanTransitionVariable from '../data/MubanTransitionVariable';
 import bows from 'bows';
-import IMubanTransitionCoreMixin from '../interface/IMubanTransitionCoreMixin';
+import { IMubanTransitionCoreMixin } from '../interface/IMubanTransitionCoreMixin';
 
 export const base: Constructor<IMubanTransitionCoreMixin> &
   typeof CoreComponent = mubanTransitionCoreMixin(CoreComponent);

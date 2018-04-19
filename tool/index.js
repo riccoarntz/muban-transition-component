@@ -2,40 +2,18 @@ const fs = require('fs-extra');
 const path = require('path');
 const rimraf = require('rimraf');
 const nrc = require('node-run-cmd');
-const confirm = require('confirm-simple');
 
-const actionType = {
+export const actionType = {
   REPLACE: 'replace',
   REMOVE: 'remove',
   RUN: 'run',
 };
-
-// Actions
-const actions = [
-  {
-    type: actionType.RUN,
-    label: 'Update the seng-generator template path.',
-    command: 'sg settings -t ./template,./node_modules/muban-transition-component/template',
-  },
-  {
-    type: actionType.RUN,
-    label: 'Update the seng-generator component path.',
-    command: 'sg settings -d ./src/component',
-  },
-  {
-    type: actionType.REPLACE,
-    label: 'Replace files in the skeleton.',
-    source: 'template',
-    target: './',
-  }
-];
-
 /**
  * Replace a file
  * @param source
  * @param target
  */
-const replaceFile = (source, target) => {
+export const replaceFile = (source, target) => {
   return fs.copy(`${__dirname}/${source}`, path.resolve(target), {
     overwrite: true,
   });
@@ -45,7 +23,7 @@ const replaceFile = (source, target) => {
  * Remove a path
  * @param target
  */
-const removePath = (target) => {
+export const removePath = (target) => {
   return new Promise((resolve, reject) => {
     rimraf(path.resolve(target), {}, error => {
       if (error) {
@@ -61,7 +39,7 @@ const removePath = (target) => {
  * Run a command
  * @param command
  */
-const runCommand = (command) => {
+export const runCommand = (command) => {
   return new Promise((resolve, reject) => {
     nrc.run(command, {
       shell: true,
@@ -72,7 +50,7 @@ const runCommand = (command) => {
 };
 
 // Parse the actions
-const parseActions = (actions) => {
+export const parseActions = (actions) => {
   return actions.map(action => () => {
     console.log(`Running - "${action.label}"`);
     switch (action.type) {
@@ -92,7 +70,7 @@ const parseActions = (actions) => {
 };
 
 // Run promises in a loop after each other
-const sequentialPromises = (promises) => {
+export const sequentialPromises = (promises) => {
   return new Promise((resolve, reject) => {
     const promiseCount = promises.length;
     const resolvePromise = promise =>
@@ -108,11 +86,3 @@ const sequentialPromises = (promises) => {
     }
   });
 };
-
-confirm('Running this script will replace/add files, are you running this on a clean project?', function (ok) {
-  if (ok) {
-    sequentialPromises(parseActions(actions))
-    .then(() => console.log('Done.'))
-    .catch(reason => console.log('Failed to execute the script: ', reason));
-  }
-});

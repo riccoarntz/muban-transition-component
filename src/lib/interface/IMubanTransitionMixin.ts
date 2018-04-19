@@ -1,7 +1,7 @@
 import AbstractTransitionController from 'transition-controller';
-import IMubanTransitionCoreMixin from './IMubanTransitionCoreMixin';
+import { IMubanTransitionCoreMixin } from './IMubanTransitionCoreMixin';
 
-interface IMubanTransitionMixin extends IMubanTransitionCoreMixin {
+export interface IMubanTransitionMixin extends IMubanTransitionCoreMixin {
   /**
    * @public
    * @property transitionController
@@ -43,5 +43,3 @@ interface IMubanTransitionMixin extends IMubanTransitionCoreMixin {
 
   transitionInThreshold: number;
 }
-
-export default IMubanTransitionMixin;
