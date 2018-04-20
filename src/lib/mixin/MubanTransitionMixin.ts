@@ -9,7 +9,6 @@ DisposableHelper;
 function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixin>>(Base: TBase) {
   return class MubanTransitionMixin extends Base {
     public transitionController: AbstractTransitionController<IMubanTransitionMixin>;
-    public loopingAnimationsStarted: boolean = false;
     public transitionInThreshold: number = 0.25;
     public inView: boolean = false;
 
@@ -39,7 +38,6 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixi
      */
     public startLoopingAnimation(): void {
       this.transitionController.startLoopingAnimation();
-      this.loopingAnimationsStarted = true;
     }
 
     /**
@@ -48,7 +46,6 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixi
      */
     public stopLoopingAnimation(): void {
       this.transitionController.stopLoopingAnimation();
-      this.loopingAnimationsStarted = false;
     }
   };
 }
