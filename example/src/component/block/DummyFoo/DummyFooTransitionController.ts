@@ -24,7 +24,7 @@ class DummyFooTransitionController extends MubanTransitionController<DummyFoo> {
     this.transitionInTimeline.from(textContent, 0.8, {opacity: 0}, 'afterBg');
     this.transitionInTimeline.from(textContent, 0.8, {y: 30, ease: Expo.easeOut, clearProps: 'all'}, 'afterBg');
 
-    this.transitionInTimeline.add(this.getSubTimeline(primaryButton, TransitionDirection.IN), 'afterBg+=0.2');
+    this.transitionInTimeline.add(this.getTimeline(primaryButton, TransitionDirection.IN), 'afterBg+=0.2');
 
     this.transitionInTimeline.from(loopingTitle, 0.8, {opacity: 0}, 'afterBg+=0.4');
     this.transitionInTimeline.from(loopingTitle, 0.8, {y: 20, ease: Expo.easeOut}, 'afterBg+=0.4');

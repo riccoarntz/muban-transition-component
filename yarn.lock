@@ -1335,6 +1335,10 @@ color-name@^1.1.1:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
 
+colors-mini@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/colors-mini/-/colors-mini-1.0.2.tgz#3ec83a183ce925a4a976759f8ef242f483cb1809"
+
 combined-stream@1.0.6, combined-stream@^1.0.5, combined-stream@~1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-1.0.6.tgz#723e7df6e801ac5613113a7e445a9b69cb632818"
@@ -1369,6 +1373,12 @@ concat-stream@^1.6.0:
     inherits "^2.0.3"
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
+
+confirm-simple@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/confirm-simple/-/confirm-simple-1.0.3.tgz#42dc99c67d605e8f76c888bd42da1368c38248da"
+  dependencies:
+    colors-mini "^1.0.2"
 
 console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
@@ -3429,6 +3439,10 @@ node-pre-gyp@^0.6.39:
     tar "^2.2.1"
     tar-pack "^3.4.0"
 
+node-run-cmd@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/node-run-cmd/-/node-run-cmd-1.0.1.tgz#1755c12624bdff920d8f45242d6642e214a3d400"
+
 nopt@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-4.0.1.tgz#d0d4685afd5415193c8c7505602d0d17cd64474d"
@@ -4748,9 +4762,9 @@ tr46@^1.0.0:
   dependencies:
     punycode "^2.1.0"
 
-transition-controller@^0.1.12:
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/transition-controller/-/transition-controller-0.1.12.tgz#c3d2c5200ad8bc321b2b3742aaadacd767142aab"
+transition-controller@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/transition-controller/-/transition-controller-0.1.13.tgz#641ec1711255c1e734de5d514dea84fb003dc5d7"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.35"
     "@types/gsap" "^1.19.1"

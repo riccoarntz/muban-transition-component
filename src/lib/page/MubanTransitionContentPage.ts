@@ -70,9 +70,7 @@ export default class MubanTransitionContentPage extends base {
           );
 
           if (element.hasAttribute(MubanTransitionVariable.scrollComponentAttribute)) {
-            this.scrollComponents[
-              component.constructor['displayName'] + component.eventNamespace
-            ] = component;
+            this.scrollComponents[component.displayName + component.eventNamespace] = component;
           }
         }
       },

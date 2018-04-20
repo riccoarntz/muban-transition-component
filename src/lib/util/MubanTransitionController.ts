@@ -9,12 +9,12 @@ export default abstract class MubanTransitionController<
 > extends AbstractTransitionController<T> {
   /**
    * @protected
-   * @method getSubTimelineByComponent
+   * @method getTimelineForComponent
    * @param {string | HTMLElement | T} component
    * @param {TransitionDirection} direction
    * @returns {gsap.TimelineLite | gsap.TimelineMax}
    */
-  protected getSubTimelineByComponent(
+  protected getTimelineForComponent(
     component: HTMLElement | T,
     direction: TransitionDirection,
   ): TimelineLite | TimelineMax {

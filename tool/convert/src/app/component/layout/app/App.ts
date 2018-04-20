@@ -5,7 +5,6 @@ export default class App extends MubanTransitionContentPage {
 
   constructor(element: HTMLElement) {
     super(element);
-
     // for generic app logic
   }
 
