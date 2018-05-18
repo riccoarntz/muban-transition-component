@@ -6,6 +6,10 @@ import ICoreComponent from 'muban-core/lib/interface/ICoreComponent';
 function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Base: TBase) {
   return class MubanTransitionCoreMixin extends Base {
     /**
+     * @description unique componentId
+     */
+    public componentId: string;
+    /**
      * @description Namespace counter base
      */
     static eventNamespaceCount: number = 10000000;
@@ -27,6 +31,7 @@ function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Bas
       super(...args);
 
       this.eventNamespace = '.' + ++MubanTransitionCoreMixin.eventNamespaceCount;
+      this.componentId = this.displayName + this.eventNamespace;
     }
 
     /**

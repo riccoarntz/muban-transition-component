@@ -7,4 +7,5 @@ export interface IMubanTransitionCoreMixin extends ICoreComponent {
   disposable: DisposableHelper;
   dispatcher: EventDispatcher;
   displayName: string;
+  componentId: string;
 }

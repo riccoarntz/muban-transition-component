@@ -10,7 +10,6 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixi
   return class MubanTransitionMixin extends Base {
     public transitionController: AbstractTransitionController<IMubanTransitionMixin>;
     public transitionInThreshold: number = 0.25;
-    public inView: boolean = false;
 
     constructor(...args: any[]) {
       super(...args);
