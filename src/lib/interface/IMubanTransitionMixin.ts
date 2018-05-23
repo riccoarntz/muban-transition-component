@@ -11,6 +11,28 @@ export interface IMubanTransitionMixin extends IMubanTransitionCoreMixin {
 
   /**
    * @public
+   * @method leaveView
+   * @description When a scrollComponent leaves the view.
+   */
+  leaveView(): void;
+
+  /**
+   * @public
+   * @method enterView
+   * @description When a scrollComponent enters the view.
+   */
+  enterView(): void;
+
+  /**
+   * @public
+   * @method beyondView
+   * @description When the scrollbar is dragged down super fast the default enter view event might not be
+   * triggered therefor we have a beyondView event! If it's already transitioned in it will do nothing! But if
+   * it's not transitioned in it will still try to transitionIn */
+  beyondView(): void;
+
+  /**
+   * @public
    * @method transitionIn
    * @description The main transitionIn method for the component
    * @param forceTransition Add this flag if you want to overwrite any active transitions
@@ -41,5 +63,5 @@ export interface IMubanTransitionMixin extends IMubanTransitionCoreMixin {
    */
   stopLoopingAnimation(): void;
 
-  transitionInThreshold: number;
+  enterViewThreshold: number;
 }

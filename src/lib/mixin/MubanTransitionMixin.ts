@@ -9,10 +9,41 @@ DisposableHelper;
 function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixin>>(Base: TBase) {
   return class MubanTransitionMixin extends Base {
     public transitionController: AbstractTransitionController<IMubanTransitionMixin>;
-    public transitionInThreshold: number = 0.25;
+    public enterViewThreshold: number = 0.25;
 
     constructor(...args: any[]) {
       super(...args);
+    }
+
+    /**
+     * @public
+     * @description When a scrollComponent enters the view.
+     * @method enterView
+     */
+    public enterView(): void {
+      this.transitionIn();
+      this.startLoopingAnimation();
+    }
+
+    /**
+     * @public
+     * @description When a scrollComponent leaves the view.
+     * @method leaveView
+     */
+    public leaveView(): void {
+      this.stopLoopingAnimation();
+    }
+
+    /**
+     * @public
+     * @method beyondView
+     * @description When the scrollbar is dragged down super fast the default enter view event might not be
+     * triggered therefor we have a beyondView event! If it's already transitioned in it will do nothing! But if
+     * it's not transitioned in it will still try to transitionIn
+     */
+    public beyondView(): void {
+      // Todo maybe seek to progress(1) to avoid (unnecessary) performance issue's
+      this.transitionIn();
     }
 
     /**
