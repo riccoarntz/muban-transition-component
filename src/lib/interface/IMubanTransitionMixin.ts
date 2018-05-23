@@ -52,16 +52,20 @@ export interface IMubanTransitionMixin extends IMubanTransitionCoreMixin {
   /**
    * @public
    * @method startLoopingAnimation
-   * @description Starts the main loopingAnimation for the component
+   * @description Starts the loopingAnimation timeline for the component
    */
   startLoopingAnimation(): void;
 
   /**
    * @public
    * @method stopLoopingAnimation
-   * @description Stops the main loopingAnimation for the component
+   * @description Stops the loopingAnimation timeline for the component
    */
   stopLoopingAnimation(): void;
 
+  /**
+   * @description: PropertyName of the component that contains a number between 0 - 1.
+   * Setting this number to for example 0.5 will trigger the enterView method when the component is already visible for 50% within your viewport.
+   */
   enterViewThreshold: number;
 }
