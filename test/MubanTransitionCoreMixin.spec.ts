@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { render, getComponent } from './util/index.spec';
 import EventDispatcher from 'seng-event/lib/EventDispatcher';
-import DisposableHelper from 'src/lib/event/DisposableHelper';
+import DisposableHelper from '../src/lib/event/DisposableHelper';
 
 describe('MubanTransitionCoreMixin.spec', () => {
   render();
@@ -32,12 +32,6 @@ describe('MubanTransitionCoreMixin.spec', () => {
     });
   });
 
-  describe('eventNamespaceCount', () => {
-    it('should be a number', () => {
-      expect(component.eventNamespaceCount).to.be.a('number');
-    });
-  });
-
   describe('eventNamespace', () => {
     it('should be a string', () => {
       expect(component.componentId).to.be.a('string');
@@ -49,6 +43,4 @@ describe('MubanTransitionCoreMixin.spec', () => {
       expect(component.disposable).to.be.an.instanceof(DisposableHelper);
     });
   });
-
-
 });
