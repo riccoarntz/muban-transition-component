@@ -1,4 +1,4 @@
-import AbstractTransitionBlock from '../AbstractTransitionBlock';
+import AbstractTransitionBlock from 'src/app/component/block/AbstractTransitionBlock';
 import {{name_pc}}TransitionController from './{{name_pc}}TransitionController';
 
 export default class {{name_pc}} extends AbstractTransitionBlock {

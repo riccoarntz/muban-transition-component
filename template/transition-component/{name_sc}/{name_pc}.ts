@@ -1,4 +1,4 @@
-import AbstractTransitionComponent from '../AbstractTransitionComponent';
+import AbstractTransitionComponent from 'src/app/component/AbstractTransitionComponent';
 import {{name_pc}}TransitionController from './{{name_pc}}TransitionController';
 
 export default class {{name_pc}} extends AbstractTransitionComponent {

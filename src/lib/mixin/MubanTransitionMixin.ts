@@ -3,6 +3,7 @@ import { IMubanTransitionCoreMixin } from '../interface/IMubanTransitionCoreMixi
 import { IMubanTransitionMixin } from '../interface/IMubanTransitionMixin';
 import DisposableHelper from '../event/DisposableHelper';
 import EventDispatcher from 'seng-event/lib/EventDispatcher';
+
 EventDispatcher;
 DisposableHelper;
 
@@ -10,6 +11,7 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixi
   return class MubanTransitionMixin extends Base {
     public transitionController: AbstractTransitionController<IMubanTransitionMixin>;
     public enterViewThreshold: number = 0.25;
+    public hasEntered: boolean = false;
 
     constructor(...args: any[]) {
       super(...args);
@@ -42,8 +44,10 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixi
      * it's not transitioned in it will still try to transitionIn
      */
     public beyondView(): void {
-      // Todo maybe seek to progress(1) to avoid (unnecessary) performance issue's
-      this.transitionIn();
+      if (!this.hasEntered) {
+        // Todo maybe seek to progress(1) to avoid (unnecessary) performance issue's
+        this.transitionIn();
+      }
     }
 
     /**
