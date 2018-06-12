@@ -4267,9 +4267,9 @@ sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-scroll-tracker-component-manager@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/scroll-tracker-component-manager/-/scroll-tracker-component-manager-1.1.0.tgz#1d861a723b65fa8bba52dd82120f43b7b18d4f90"
+scroll-tracker-component-manager@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/scroll-tracker-component-manager/-/scroll-tracker-component-manager-1.1.1.tgz#0e7e56163bcd1b048e98907017164b4fec6886ab"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.35"
     lodash "^4.17.10"
