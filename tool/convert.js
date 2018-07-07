@@ -6,7 +6,7 @@ const actions = [
   {
     type: actionType.RUN,
     label: 'Update the seng-generator template path.',
-    command: 'sg settings -t ./template,./node_modules/muban-transition-component/template',
+    command: 'sg settings -t ./build-tools/template,./node_modules/muban-transition-component/template',
   },
   {
     type: actionType.REPLACE,
