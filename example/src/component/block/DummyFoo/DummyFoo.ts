@@ -45,22 +45,6 @@ export default class DummyFoo extends mubanTransitionMixin(mubanTransitionCoreMi
     this.dummyFooPopup.transitionIn();
   }
 
-  /**
-   * @public
-   * @method stopLoopingAnimation
-   */
-  public stopLoopingAnimation(): void {
-    super.stopLoopingAnimation();
-  }
-
-  /**
-   * @public
-   * @method startLoopingAnimations
-   */
-  public startLoopingAnimation(): void {
-    super.startLoopingAnimation();
-  }
-
   public dispose() {
     super.dispose();
   }

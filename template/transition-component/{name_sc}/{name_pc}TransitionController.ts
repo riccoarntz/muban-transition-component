@@ -1,5 +1,5 @@
 import { MubanTransitionController, IMubanTransitionMixin } from 'muban-transition-component';
-import { TimelineLite, TimelineMax } from 'gsap';
+import { TimelineMax } from 'gsap';
 import {{name_pc}} from './{{name_pc}}';
 
 class {{name_pc}}TransitionController extends MubanTransitionController<{{name_pc}}>
@@ -9,12 +9,12 @@ class {{name_pc}}TransitionController extends MubanTransitionController<{{name_p
    *
    * @protected
    * @method setupTransitionInTimeline
-   * @param {TimelineLite | TimelineMax} timeline The transition in timeline
+   * @param {TimelineMax} timeline The transition in timeline
    * @param {IMubanTransitionMixin} parent The reference to the parent controller
    * @param {string} id The transition id that was provided when constructing the controller
    */
   protected setupTransitionInTimeline(
-    timeline:TimelineLite|TimelineMax,
+    timeline:TimelineMax,
     parent:{{name_pc}},
     id:string): void {}
 
@@ -23,12 +23,12 @@ class {{name_pc}}TransitionController extends MubanTransitionController<{{name_p
    *
    * @protected
    * @method setupTransitionOutTimeline
-   * @param {TimelineLite | TimelineMax} timeline The transition in timeline
+   * @param {TimelineMax} timeline The transition in timeline
    * @param {IMubanTransitionMixin} parent The reference to the parent controller
    * @param {string} id The transition id that was provided when constructing the controller
    */
   protected setupTransitionOutTimeline(
-    timeline:TimelineLite|TimelineMax,
+    timeline:TimelineMax,
     parent:{{name_pc}},
     id:string): void {}
 

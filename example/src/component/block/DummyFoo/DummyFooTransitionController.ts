@@ -1,5 +1,5 @@
 import MubanTransitionController from '../../../../../src/lib/util/MubanTransitionController';
-import { Expo, TimelineLite, TimelineMax } from 'gsap';
+import { Expo, TimelineMax } from 'gsap';
 import TransitionDirection from 'transition-controller/lib/enum/TransitionDirection';
 import DummyFoo from './DummyFoo';
 
@@ -10,12 +10,12 @@ class DummyFooTransitionController extends MubanTransitionController<DummyFoo> {
    *
    * @protected
    * @method setupTransitionInTimeline
-   * @param {TimelineLite | TimelineMax} timeline The transition in timeline
+   * @param {TimelineMax} timeline The transition in timeline
    * @param {IMubanTransitionMixin} parent The reference to the parent controller
    * @param {string} id The transition id that was provided when constructing the controller
    */
   protected setupTransitionInTimeline(
-    timeline:TimelineLite|TimelineMax,
+    timeline:TimelineMax,
     parent:DummyFoo
   ): void {
     parent.test();
@@ -45,12 +45,12 @@ class DummyFooTransitionController extends MubanTransitionController<DummyFoo> {
    *
    * @protected
    * @method setupTransitionOutTimeline
-   * @param {TimelineLite | TimelineMax} timeline The transition in timeline
+   * @param {TimelineMax} timeline The transition in timeline
    * @param {IMubanTransitionMixin} parent The reference to the parent controller
    * @param {string} id The transition id that was provided when constructing the controller
    */
   protected setupTransitionOutTimeline(
-    timeline:TimelineLite|TimelineMax,
+    timeline:TimelineMax,
     parent:DummyFoo
   ): void {
     timeline.to(parent.element, 0.8, {opacity: 0});
@@ -61,7 +61,7 @@ class DummyFooTransitionController extends MubanTransitionController<DummyFoo> {
    *
    * @protected
    * @method setupLoopingAnimationTimeline
-   * @param {TimelineLite | TimelineMax} timeline The transition in timeline
+   * @param {TimelineMax} timeline The transition in timeline
    * @param {IMubanTransitionMixin} parent The reference to the parent controller
    * @param {string} id The transition id that was provided when constructing the controller
    */

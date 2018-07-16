@@ -13,22 +13,6 @@ export default class PrimaryButton extends mubanTransitionMixin(mubanTransitionC
     this.transitionController = new PrimaryButtonTransitionController(this);
   }
 
-  /**
-   * @public
-   * @method stopLoopingAnimation
-   */
-  public stopLoopingAnimation(): void {
-    super.stopLoopingAnimation();
-  }
-
-  /**
-   * @public
-   * @method startLoopingAnimation
-   */
-  public startLoopingAnimation(): void {
-    super.startLoopingAnimation();
-  }
-
   public dispose() {
     super.dispose();
   }

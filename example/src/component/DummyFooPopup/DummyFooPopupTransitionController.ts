@@ -1,5 +1,5 @@
 import MubanTransitionController from '../../../../src/lib/util/MubanTransitionController';
-import { Expo, Back, TimelineMax, TimelineLite } from 'gsap';
+import { Expo, Back, TimelineMax } from 'gsap';
 import DummyFooPopup from './DummyFooPopup';
 
 class DummyFooPopupTransitionController extends MubanTransitionController<DummyFooPopup> {
@@ -9,7 +9,7 @@ class DummyFooPopupTransitionController extends MubanTransitionController<DummyF
    * @description Use this method to setup your transition in timeline
    * */
   protected setupTransitionInTimeline(
-    timeline:TimelineLite|TimelineMax,
+    timeline:TimelineMax,
     parent:DummyFooPopup
   ): void {
     const title: HTMLElement = parent.getElement('.js-title');
@@ -29,7 +29,7 @@ class DummyFooPopupTransitionController extends MubanTransitionController<DummyF
    * @description Use this method to setup your transition out timeline
    * */
   protected setupTransitionOutTimeline(
-    timeline:TimelineLite|TimelineMax,
+    timeline:TimelineMax,
     parent:DummyFooPopup
   ): void {
     timeline.to(parent.element, 0.2, {

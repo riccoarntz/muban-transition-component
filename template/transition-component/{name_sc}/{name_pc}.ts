@@ -9,20 +9,4 @@ export default class {{name_pc}} extends AbstractTransitionComponent {
     super(el);
     this.transitionController = new {{name_pc}}TransitionController(this);
   }
-
-  /**
-   * @public
-   * @method startLoopingAnimation
-   */
-  public startLoopingAnimation():void {
-    super.startLoopingAnimation();
-  }
-
-  /**
-   * @public
-   * @method stopLoopingAnimation
-   */
-  public stopLoopingAnimation():void {
-    super.stopLoopingAnimation();
-  }
 }
