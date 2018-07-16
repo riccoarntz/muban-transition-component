@@ -64,7 +64,63 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="muban-transition-component">muban-transition-component</h1>
+				<p>Provides GreenSock transition functionality to <a href="https://mediamonks.github.io/muban/">muban</a> components.</p>
+				<h2 id="table-of-contents">Table of contents</h2>
+				<ol>
+					<li><a href="#installation">Installation</a></li>
+					<li><a href="#demo">Demo</a></li>
+					<li><a href="#usage">Usage</a></li>
+					<li><a href="#building">Building</a></li>
+					<li><a href="#authors">Authors</a></li>
+					<li><a href="#contribute">Contribute</a></li>
+					<li><a href="#license">License</a></li>
+				</ol>
+				<h2 id="installation">Installation</h2>
+				<h3 id="yarn-npm">yarn / npm</h3>
+				<pre><code class="lang-sh">yarn add muban-transition-component
+</code></pre>
+				<pre><code class="lang-sh">npm i -S muban-transition-component
+</code></pre>
+				<h2 id="demo">Demo</h2>
+				<p>Demo can be found in /example.
+				Install dev dependencies:</p>
+				<pre><code class="lang-sh">  yarn
+</code></pre>
+				<p>Run the example:</p>
+				<pre><code class="lang-sh">  yarn dev
+</code></pre>
+				<h2 id="usage">Usage</h2>
+				<p>Detailed documentation and examples are located in the wiki!</p>
+				<h3 id="check-the-wiki-"><a href="https://github.com/riccomediamonks/muban-transition-component/wiki">Check the wiki!</a></h3>
+				<h2 id="building">Building</h2>
+				<p>In order to build muban-transition-component, ensure that you have <a href="http://git-scm.com/downloads">Git</a> and [Node.js]
+				(<a href="http://nodejs.org/">http://nodejs.org/</a>) installed.</p>
+				<p>Clone a copy of the repo:</p>
+				<pre><code class="lang-sh">git <span class="hljs-built_in">clone</span> https://github.com/riccomediakonks/muban-transition-component.git
+</code></pre>
+				<p>Change to the vue-transition directory:</p>
+				<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> muban-transition-component
+</code></pre>
+				<p>Install dev dependencies:</p>
+				<pre><code class="lang-sh">yarn
+</code></pre>
+				<p>Use one of the following main scripts:</p>
+				<pre><code class="lang-sh">yarn build           <span class="hljs-comment"># build this project</span>
+yarn dev             <span class="hljs-comment"># run dev-watch mode, serving example/index.html in the browser</span>
+yarn generate        <span class="hljs-comment"># generate all artifacts (compiles ts, webpack, docs and coverage)</span>
+yarn <span class="hljs-built_in">test</span>:unit       <span class="hljs-comment"># run the unit tests</span>
+yarn validate        <span class="hljs-comment"># runs validation scripts, including test, lint and coverage check</span>
+yarn lint            <span class="hljs-comment"># run tslint on this project</span>
+yarn doc             <span class="hljs-comment"># generate typedoc documentation</span>
+</code></pre>
+				<p>When installing this module, it adds a pre-push hook, that runs the <code>validate</code>
+				script before committing, so you can be sure that everything checks out.</p>
+				<h2 id="authors">Authors</h2>
+				<p>View <a href="./AUTHORS.md">AUTHORS.md</a></p>
+				<h2 id="contribute">Contribute</h2>
+				<p>View <a href="./CONTRIBUTING.md">CONTRIBUTING.md</a></p>
+				<h2 id="license">License</h2>
+				<p><a href="./LICENSE">MIT</a> © Ricco Arntz</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -77,29 +133,14 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/disposablehelper.html" class="tsd-kind-icon">Disposable<wbr>Helper</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/mubantransitioncontentpage.html" class="tsd-kind-icon">Muban<wbr>Transition<wbr>Content<wbr>Page</a>
-					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/mubantransitioncontroller.html" class="tsd-kind-icon">Muban<wbr>Transition<wbr>Controller</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/nativeeventlistener.html" class="tsd-kind-icon">Native<wbr>Event<wbr>Listener</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/scrollutils.html" class="tsd-kind-icon">Scroll<wbr>Utils</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/imubantransitioncoremixin.html" class="tsd-kind-icon">IMuban<wbr>Transition<wbr>Core<wbr>Mixin</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/imubantransitionmixin.html" class="tsd-kind-icon">IMuban<wbr>Transition<wbr>Mixin</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#base" class="tsd-kind-icon">base</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#mubantransitioncoremixin" class="tsd-kind-icon">muban<wbr>Transition<wbr>Core<wbr>Mixin</a>

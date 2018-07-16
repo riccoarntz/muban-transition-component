@@ -86,22 +86,25 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitionmixin.html#componentid" class="tsd-kind-icon">component<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitionmixin.html#dispatcher" class="tsd-kind-icon">dispatcher</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitionmixin.html#displayname" class="tsd-kind-icon">display<wbr>Name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitionmixin.html#disposable" class="tsd-kind-icon">disposable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitionmixin.html#element" class="tsd-kind-icon">element</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imubantransitionmixin.html#enterviewthreshold" class="tsd-kind-icon">enter<wbr>View<wbr>Threshold</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitionmixin.html#eventnamespace" class="tsd-kind-icon">event<wbr>Namespace</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imubantransitionmixin.html#transitioncontroller" class="tsd-kind-icon">transition<wbr>Controller</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imubantransitionmixin.html#transitioninthreshold" class="tsd-kind-icon">transition<wbr>InThreshold</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imubantransitionmixin.html#beyondview" class="tsd-kind-icon">beyond<wbr>View</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitionmixin.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imubantransitionmixin.html#enterview" class="tsd-kind-icon">enter<wbr>View</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited"><a href="imubantransitionmixin.html#getelement" class="tsd-kind-icon">get<wbr>Element</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited"><a href="imubantransitionmixin.html#getelements" class="tsd-kind-icon">get<wbr>Elements</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="imubantransitionmixin.html#isdisposed" class="tsd-kind-icon">is<wbr>Disposed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imubantransitionmixin.html#leaveview" class="tsd-kind-icon">leave<wbr>View</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imubantransitionmixin.html#startloopinganimation" class="tsd-kind-icon">start<wbr>Looping<wbr>Animation</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imubantransitionmixin.html#stoploopinganimation" class="tsd-kind-icon">stop<wbr>Looping<wbr>Animation</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imubantransitionmixin.html#transitionin" class="tsd-kind-icon">transition<wbr>In</a></li>
@@ -114,15 +117,40 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="componentid" class="tsd-anchor"></a>
+					<h3>component<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">component<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="imubantransitioncoremixin.html">IMubanTransitionCoreMixin</a>.<a href="imubantransitioncoremixin.html#componentid">componentId</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionCoreMixin.ts#L20">lib/interface/IMubanTransitionCoreMixin.ts:20</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>description</dt>
+							<dd><p>namespaced componentId</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="dispatcher" class="tsd-anchor"></a>
 					<h3>dispatcher</h3>
 					<div class="tsd-signature tsd-kind-icon">dispatcher<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventDispatcher</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="imubantransitioncoremixin.html">IMubanTransitionCoreMixin</a>.<a href="imubantransitioncoremixin.html#dispatcher">dispatcher</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionCoreMixin.ts#L8">lib/interface/IMubanTransitionCoreMixin.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionCoreMixin.ts#L12">lib/interface/IMubanTransitionCoreMixin.ts:12</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>description:</dt>
+							<dd><p>EventDispatcher instance for dispatching/listening to events.</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="displayname" class="tsd-anchor"></a>
@@ -131,20 +159,16 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="imubantransitioncoremixin.html">IMubanTransitionCoreMixin</a>.<a href="imubantransitioncoremixin.html#displayname">displayName</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionCoreMixin.ts#L9">lib/interface/IMubanTransitionCoreMixin.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionCoreMixin.ts#L16">lib/interface/IMubanTransitionCoreMixin.ts:16</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="disposable" class="tsd-anchor"></a>
-					<h3>disposable</h3>
-					<div class="tsd-signature tsd-kind-icon">disposable<span class="tsd-signature-symbol">:</span> <a href="../classes/disposablehelper.html" class="tsd-signature-type">DisposableHelper</a></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="imubantransitioncoremixin.html">IMubanTransitionCoreMixin</a>.<a href="imubantransitioncoremixin.html#disposable">disposable</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionCoreMixin.ts#L7">lib/interface/IMubanTransitionCoreMixin.ts:7</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>description</dt>
+							<dd><p>unique componentId</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="element" class="tsd-anchor"></a>
@@ -157,6 +181,24 @@
 						</ul>
 					</aside>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="enterviewthreshold" class="tsd-anchor"></a>
+					<h3>enter<wbr>View<wbr>Threshold</h3>
+					<div class="tsd-signature tsd-kind-icon">enter<wbr>View<wbr>Threshold<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionMixin.ts#L77">lib/interface/IMubanTransitionMixin.ts:77</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>description:</dt>
+							<dd><p>PropertyName of the component that contains a number between 0 - 1.
+								Setting this number to for example 0.5 will trigger the enterView method when the component is already visible for 50% within your viewport.</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="eventnamespace" class="tsd-anchor"></a>
 					<h3>event<wbr>Namespace</h3>
@@ -164,9 +206,16 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="imubantransitioncoremixin.html">IMubanTransitionCoreMixin</a>.<a href="imubantransitioncoremixin.html#eventnamespace">eventNamespace</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionCoreMixin.ts#L6">lib/interface/IMubanTransitionCoreMixin.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionCoreMixin.ts#L8">lib/interface/IMubanTransitionCoreMixin.ts:8</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>description</dt>
+							<dd><p>Unique namespace for the components</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="transitioncontroller" class="tsd-anchor"></a>
@@ -174,7 +223,7 @@
 					<div class="tsd-signature tsd-kind-icon">transition<wbr>Controller<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AbstractTransitionController</span><span class="tsd-signature-symbol">&lt;</span><a href="imubantransitionmixin.html" class="tsd-signature-type">IMubanTransitionMixin</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionMixin.ts#L10">lib/interface/IMubanTransitionMixin.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionMixin.ts#L10">lib/interface/IMubanTransitionMixin.ts:10</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -188,19 +237,38 @@
 						</dl>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="transitioninthreshold" class="tsd-anchor"></a>
-					<h3>transition<wbr>InThreshold</h3>
-					<div class="tsd-signature tsd-kind-icon">transition<wbr>InThreshold<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionMixin.ts#L44">lib/interface/IMubanTransitionMixin.ts:44</a></li>
-						</ul>
-					</aside>
-				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="beyondview" class="tsd-anchor"></a>
+					<h3>beyond<wbr>View</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">beyond<wbr>View<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionMixin.ts#L32">lib/interface/IMubanTransitionMixin.ts:32</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>beyondView</p>
+									</dd>
+									<dt>description</dt>
+									<dd><p>When the scrollbar is dragged down super fast the default enter view event might not be
+											triggered therefor we have a beyondView event! If it&#39;s already transitioned in it will do nothing! But if
+										it&#39;s not transitioned in it will still try to transitionIn</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
 					<a name="dispose" class="tsd-anchor"></a>
 					<h3>dispose</h3>
@@ -219,6 +287,33 @@
 								<div class="lead">
 									<p>Destruct this class.</p>
 								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="enterview" class="tsd-anchor"></a>
+					<h3>enter<wbr>View</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">enter<wbr>View<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionMixin.ts#L24">lib/interface/IMubanTransitionMixin.ts:24</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>enterView</p>
+									</dd>
+									<dt>description</dt>
+									<dd><p>When a scrollComponent enters the view.</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -329,28 +424,65 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="startloopinganimation" class="tsd-anchor"></a>
-					<h3>start<wbr>Looping<wbr>Animation</h3>
+					<a name="leaveview" class="tsd-anchor"></a>
+					<h3>leave<wbr>View</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">start<wbr>Looping<wbr>Animation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">leave<wbr>View<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionMixin.ts#L35">lib/interface/IMubanTransitionMixin.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionMixin.ts#L17">lib/interface/IMubanTransitionMixin.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>method</dt>
-									<dd><p>startLoopingAnimation</p>
+									<dd><p>leaveView</p>
 									</dd>
 									<dt>description</dt>
-									<dd><p>Starts the main loopingAnimation for the component</p>
+									<dd><p>When a scrollComponent leaves the view.</p>
 									</dd>
 								</dl>
 							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="startloopinganimation" class="tsd-anchor"></a>
+					<h3>start<wbr>Looping<wbr>Animation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">start<wbr>Looping<wbr>Animation<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, reset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionMixin.ts#L64">lib/interface/IMubanTransitionMixin.ts:64</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Start the looping animations on the current component</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> id: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>This is the id of the transition out timeline that you want to play</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> reset: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If the reset flag is set to true it will re-initialize the current timeline</p>
+									</div>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -365,18 +497,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionMixin.ts#L42">lib/interface/IMubanTransitionMixin.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionMixin.ts#L71">lib/interface/IMubanTransitionMixin.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>stopLoopingAnimation</p>
-									</dd>
-									<dt>description</dt>
-									<dd><p>Stops the main loopingAnimation for the component</p>
-									</dd>
-								</dl>
+								<div class="lead">
+									<p>This will stop the current looping animation, keep in mind it will not reset it just stop at the current state.</p>
+								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -392,18 +519,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionMixin.ts#L19">lib/interface/IMubanTransitionMixin.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionMixin.ts#L42">lib/interface/IMubanTransitionMixin.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>transitionIn</p>
-									</dd>
-									<dt>description</dt>
-									<dd><p>The main transitionIn method for the component</p>
-									</dd>
-								</dl>
+								<div class="lead">
+									<p>Calling transition in will trigger transitionIn on your transition controller and
+									start the desired timeline.</p>
+								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -415,7 +538,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise that will be resolved when the transition in timeline is completed</p>
+							<p>A promise that will be resolved when the transition in is completed</p>
 						</li>
 					</ul>
 				</section>
@@ -423,22 +546,23 @@
 					<a name="transitionout" class="tsd-anchor"></a>
 					<h3>transition<wbr>Out</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">transition<wbr>Out<span class="tsd-signature-symbol">(</span>forceTransition<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">transition<wbr>Out<span class="tsd-signature-symbol">(</span>forceTransition<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, reset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/bd5c160/src/lib/interface/IMubanTransitionMixin.ts#L28">lib/interface/IMubanTransitionMixin.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/riccomediamonks/muban-transition-component/blob/d3cf3aa/src/lib/interface/IMubanTransitionMixin.ts#L55">lib/interface/IMubanTransitionMixin.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Calling transition out will trigger transitionOut on your transition controller and
+									start the desired timeline.</p>
+								</div>
 								<dl class="tsd-comment-tags">
 									<dt>method</dt>
 									<dd><p>transitionOut</p>
-									</dd>
-									<dt>description</dt>
-									<dd><p>The main transitionOut method for the component</p>
 									</dd>
 								</dl>
 							</div>
@@ -450,9 +574,21 @@
 										<p>Add this flag if you want to overwrite any active transitions</p>
 									</div>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> id: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>This is the id of the transition out timeline that you want to play</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> reset: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If the reset flag is set to true it will re-initialize the current timeline</p>
+									</div>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise that will be resolved when the transition in timeline is completed</p>
+							<p>A promise that will be resolved when the transition out is completed</p>
 						</li>
 					</ul>
 				</section>
@@ -468,20 +604,8 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="../classes/disposablehelper.html" class="tsd-kind-icon">Disposable<wbr>Helper</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/mubantransitioncontentpage.html" class="tsd-kind-icon">Muban<wbr>Transition<wbr>Content<wbr>Page</a>
-					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="../classes/mubantransitioncontroller.html" class="tsd-kind-icon">Muban<wbr>Transition<wbr>Controller</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/nativeeventlistener.html" class="tsd-kind-icon">Native<wbr>Event<wbr>Listener</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/scrollutils.html" class="tsd-kind-icon">Scroll<wbr>Utils</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="imubantransitioncoremixin.html" class="tsd-kind-icon">IMuban<wbr>Transition<wbr>Core<wbr>Mixin</a>
@@ -492,16 +616,19 @@
 						<a href="imubantransitionmixin.html" class="tsd-kind-icon">IMuban<wbr>Transition<wbr>Mixin</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="imubantransitionmixin.html#componentid" class="tsd-kind-icon">component<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="imubantransitionmixin.html#dispatcher" class="tsd-kind-icon">dispatcher</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="imubantransitionmixin.html#displayname" class="tsd-kind-icon">display<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="imubantransitionmixin.html#disposable" class="tsd-kind-icon">disposable</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="imubantransitionmixin.html#element" class="tsd-kind-icon">element</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="imubantransitionmixin.html#enterviewthreshold" class="tsd-kind-icon">enter<wbr>View<wbr>Threshold</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="imubantransitionmixin.html#eventnamespace" class="tsd-kind-icon">event<wbr>Namespace</a>
@@ -509,11 +636,14 @@
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="imubantransitionmixin.html#transitioncontroller" class="tsd-kind-icon">transition<wbr>Controller</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="imubantransitionmixin.html#transitioninthreshold" class="tsd-kind-icon">transition<wbr>InThreshold</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="imubantransitionmixin.html#beyondview" class="tsd-kind-icon">beyond<wbr>View</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
 								<a href="imubantransitionmixin.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="imubantransitionmixin.html#enterview" class="tsd-kind-icon">enter<wbr>View</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited">
 								<a href="imubantransitionmixin.html#getelement" class="tsd-kind-icon">get<wbr>Element</a>
@@ -523,6 +653,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
 								<a href="imubantransitionmixin.html#isdisposed" class="tsd-kind-icon">is<wbr>Disposed</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="imubantransitionmixin.html#leaveview" class="tsd-kind-icon">leave<wbr>View</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="imubantransitionmixin.html#startloopinganimation" class="tsd-kind-icon">start<wbr>Looping<wbr>Animation</a>
@@ -540,9 +673,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#base" class="tsd-kind-icon">base</a>
-					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="../globals.html#mubantransitioncoremixin" class="tsd-kind-icon">muban<wbr>Transition<wbr>Core<wbr>Mixin</a>
 					</li>

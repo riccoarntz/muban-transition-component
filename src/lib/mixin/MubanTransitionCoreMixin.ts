@@ -1,5 +1,4 @@
 import EventDispatcher from 'seng-event';
-import DisposableHelper from '../event/DisposableHelper';
 import MubanTransitionVariable from '../data/MubanTransitionVariable';
 import ICoreComponent from 'muban-core/lib/interface/ICoreComponent';
 
@@ -11,7 +10,6 @@ function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Bas
      */
     static eventNamespaceCount: number = 10000000;
     public eventNamespace: string = '';
-    public disposable: DisposableHelper = new DisposableHelper();
     public dispatcher: EventDispatcher = new EventDispatcher();
 
     constructor(...args: any[]) {
@@ -23,15 +21,6 @@ function mubanTransitionCoreMixin<TBase extends Constructor<ICoreComponent>>(Bas
 
     public get displayName() {
       return this.element.getAttribute(MubanTransitionVariable.componentAttribute);
-    }
-
-    public dispose() {
-      if (this.disposable) {
-        this.disposable.dispose();
-        this.disposable = null;
-      }
-
-      super.dispose();
     }
   };
 }

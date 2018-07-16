@@ -1,11 +1,9 @@
 import AbstractTransitionController from 'transition-controller';
 import { IMubanTransitionCoreMixin } from '../interface/IMubanTransitionCoreMixin';
 import { IMubanTransitionMixin } from '../interface/IMubanTransitionMixin';
-import DisposableHelper from '../event/DisposableHelper';
 import EventDispatcher from 'seng-event/lib/EventDispatcher';
 
 EventDispatcher;
-DisposableHelper;
 
 function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixin>>(Base: TBase) {
   return class MubanTransitionMixin extends Base {
