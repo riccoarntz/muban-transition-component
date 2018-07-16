@@ -9,7 +9,7 @@ class DummyFooPopupTransitionController extends MubanTransitionController<DummyF
    * @description Use this method to setup your transition in timeline
    * */
   protected setupTransitionInTimeline(): void {
-    const title: HTMLElement = this.parentController.element.querySelector('.js-title');
+    const title: HTMLElement = <HTMLElement>this.parentController.element.querySelector('.js-title');
 
     this.transitionInTimeline.fromTo(this.parentController.element, 0.2, {
       scale: 0,

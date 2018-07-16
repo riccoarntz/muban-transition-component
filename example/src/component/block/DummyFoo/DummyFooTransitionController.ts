@@ -13,12 +13,12 @@ class DummyFooTransitionController extends MubanTransitionController<DummyFoo> {
   protected setupTransitionInTimeline(): void {
     this.parentController.test();
 
-    const textContent:HTMLElement = this.parentController.element.querySelector('.js-text-content');
-    const primaryButton:HTMLElement = this.parentController.element.querySelector('.js-button-open');
-    const loopingTitle:HTMLElement = this.parentController.element.querySelector('.js-looping-title');
-    const loopingAnimation:HTMLElement = this.parentController.element.querySelector('.js-loop-animation');
+    const textContent:HTMLElement = this.parentController.getElement('.js-text-content');
+    const primaryButton:HTMLElement = this.parentController.getElement('.js-button-open');
+    const loopingTitle:HTMLElement = this.parentController.getElement('.js-looping-title');
+    const loopingAnimation:HTMLElement = this.parentController.getElement('.js-loop-animation');
 
-    this.transitionInTimeline.from(this.parentController.element.querySelector('.js-background'), 1.2, {width: 0, ease: Expo.easeInOut, clearProps: 'width'});
+    this.transitionInTimeline.from(this.parentController.getElement('.js-background'), 1.2, {width: 0, ease: Expo.easeInOut, clearProps: 'width'});
     this.transitionInTimeline.addLabel('afterBg', '-=0.6');
 
     this.transitionInTimeline.from(textContent, 0.8, {opacity: 0}, 'afterBg');

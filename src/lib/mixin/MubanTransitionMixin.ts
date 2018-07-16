@@ -17,32 +17,15 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixi
       super(...args);
     }
 
-    /**
-     * @public
-     * @description When a scrollComponent enters the view.
-     * @method enterView
-     */
     public enterView(): void {
       this.transitionIn();
       this.startLoopingAnimation();
     }
 
-    /**
-     * @public
-     * @description When a scrollComponent leaves the view.
-     * @method leaveView
-     */
     public leaveView(): void {
       this.stopLoopingAnimation();
     }
 
-    /**
-     * @public
-     * @method beyondView
-     * @description When the scrollbar is dragged down super fast the default enter view event might not be
-     * triggered therefor we have a beyondView event! If it's already transitioned in it will do nothing! But if
-     * it's not transitioned in it will still try to transitionIn
-     */
     public beyondView(): void {
       if (!this.hasEntered) {
         // Todo maybe seek to progress(1) to avoid (unnecessary) performance issue's
@@ -50,34 +33,22 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixi
       }
     }
 
-    /**
-     * @public
-     * @method transitionIn
-     */
-    public transitionIn(forceTransition = false): Promise<any> {
+    public transitionIn(forceTransition: boolean = false): Promise<any> {
       return this.transitionController.transitionIn(forceTransition);
     }
 
-    /**
-     * @public
-     * @method transitionOut
-     */
-    public transitionOut(forceTransition = false): Promise<any> {
-      return this.transitionController.transitionOut(forceTransition);
+    public transitionOut(
+      forceTransition: boolean = false,
+      id?: string,
+      reset?: boolean,
+    ): Promise<any> {
+      return this.transitionController.transitionOut(forceTransition, id, reset);
     }
 
-    /**
-     * @public
-     * @method startLoopingAnimation
-     */
-    public startLoopingAnimation(): void {
-      this.transitionController.startLoopingAnimation();
+    public startLoopingAnimation(id?: string, reset?: boolean): void {
+      this.transitionController.startLoopingAnimation(id, reset);
     }
 
-    /**
-     * @public
-     * @method stopLoopingAnimation
-     */
     public stopLoopingAnimation(): void {
       this.transitionController.stopLoopingAnimation();
     }
