@@ -15,7 +15,7 @@ class {{name_pc}}TransitionController extends MubanTransitionController<{{name_p
    */
   protected setupTransitionInTimeline(
     timeline:TimelineLite|TimelineMax,
-    parent:IMubanTransitionMixin,
+    parent:{{name_pc}},
     id:string): void {}
 
   /**
@@ -24,12 +24,12 @@ class {{name_pc}}TransitionController extends MubanTransitionController<{{name_p
    * @protected
    * @method setupTransitionOutTimeline
    * @param {TimelineLite | TimelineMax} timeline The transition in timeline
-   * @param {IAbstractTransitionComponent} parent The reference to the parent controller
+   * @param {IMubanTransitionMixin} parent The reference to the parent controller
    * @param {string} id The transition id that was provided when constructing the controller
    */
   protected setupTransitionOutTimeline(
     timeline:TimelineLite|TimelineMax,
-    parent:IMubanTransitionMixin,
+    parent:{{name_pc}},
     id:string): void {}
 
   /**
@@ -38,12 +38,12 @@ class {{name_pc}}TransitionController extends MubanTransitionController<{{name_p
    * @protected
    * @method setupLoopingAnimationTimeline
    * @param {TimelineLite | TimelineMax} timeline The transition in timeline
-   * @param {IAbstractTransitionComponent} parent The reference to the parent controller
+   * @param {IMubanTransitionMixin} parent The reference to the parent controller
    * @param {string} id The transition id that was provided when constructing the controller
    */
   protected setupLoopingAnimationTimeline(
     timeline:TimelineMax,
-    parent:IMubanTransitionMixin,
+    parent:{{name_pc}},
     id:string): void {}
 
 }

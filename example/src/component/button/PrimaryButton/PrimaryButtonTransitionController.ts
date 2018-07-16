@@ -1,37 +1,51 @@
 import MubanTransitionController from '../../../../../src/lib/util/MubanTransitionController';
-import { Expo } from 'gsap';
+import { Expo, TimelineLite, TimelineMax } from 'gsap';
 import PrimaryButton from './PrimaryButton';
 
 class PrimaryButtonTransitionController extends MubanTransitionController<PrimaryButton> {
   /**
-   * @public
+   * Use this method to setup your transition in timeline
+   *
+   * @protected
    * @method setupTransitionInTimeline
-   * @description Use this method to setup your transition in timeline
-   * */
-  protected setupTransitionInTimeline(): void {
-    this.transitionInTimeline.fromTo(this.parentController.element, 0.4, {
+   * @param {TimelineLite | TimelineMax} timeline The transition in timeline
+   * @param {PrimaryButton} parent The reference to the parent controller
+   * @param {string} id The transition id that was provided when constructing the controller
+   */
+  protected setupTransitionInTimeline(
+    timeline:TimelineLite|TimelineMax,
+    parent:PrimaryButton): void {
+    timeline.fromTo(parent.element, 0.4, {
       scale: 0,
       opacity: 0,
     }, { opacity: 1, scale: 1, clearProps: 'all', ease: Expo.easeOut });
   }
 
   /**
-   * @public
+   * Use this method to setup your transition out timeline
+   *
+   * @protected
    * @method setupTransitionOutTimeline
-   * @description Use this method to setup your transition out timeline
-   * */
-  protected setupTransitionOutTimeline(): void {
-    this.transitionOutTimeline.to(this.parentController.element, 0.6, { opacity: 0});
+   * @param {TimelineLite | TimelineMax} timeline The transition in timeline
+   * @param {PrimaryButton} parent The reference to the parent controller
+   * @param {string} id The transition id that was provided when constructing the controller
+   */
+  protected setupTransitionOutTimeline(
+    timeline:TimelineLite|TimelineMax,
+    parent:PrimaryButton): void {
+    timeline.to(parent.element, 0.6, { opacity: 0});
   }
 
   /**
+   * Use this method to setup your looping timeline
+   *
    * @protected
    * @method setupLoopingAnimationTimeline
-   * @description Use this method to setup your looping animation timeline
-   * */
-  protected setupLoopingAnimationTimeline(): void {
-
-  }
+   * @param {TimelineLite | TimelineMax} timeline The transition in timeline
+   * @param {PrimaryButton} parent The reference to the parent controller
+   * @param {string} id The transition id that was provided when constructing the controller
+   */
+  protected setupLoopingAnimationTimeline(): void {}
 }
 
 export default PrimaryButtonTransitionController;
