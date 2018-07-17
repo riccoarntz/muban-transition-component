@@ -21,6 +21,10 @@ yarn add muban-transition-component
 npm i -S muban-transition-component
 ```
 
+## Online Demo
+Checkout the online [demo](https://riccomediamonks.github.io/muban-transition-component/example/).
+
+
 ## Demo
 Demo can be found in /example.
 Install dev dependencies:
