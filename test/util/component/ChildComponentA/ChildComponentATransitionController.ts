@@ -1,4 +1,3 @@
-import { TimelineMax } from 'gsap';
 import MubanTransitionController from '../../../../src/lib/util/MubanTransitionController';
 import ChildComponentA from './ChildComponentA';
 import TransitionDirection from 'transition-controller/lib/enum/TransitionDirection';
@@ -21,7 +20,7 @@ class ChildComponentATransitionController extends MubanTransitionController<Chil
    * @method setupTransitionInTimeline
    * @description Use this method to setup your transition in timeline
    * */
-  protected setupTransitionInTimeline(timeline: TimelineMax, parent: ChildComponentA, id: string): void {
+  protected setupTransitionInTimeline(timeline: any, parent: ChildComponentA, id: string): void {
     switch (id) {
       case TransitionId[TransitionDirection.IN].TRANSITION_ID_1:
         timeline.fromTo(parent.element, 0.2, { opacity: 0, }, { opacity: 1 });
@@ -40,7 +39,7 @@ class ChildComponentATransitionController extends MubanTransitionController<Chil
    * @method setupTransitionOutTimeline
    * @description Use this method to setup your transition out timeline
    * */
-  protected setupTransitionOutTimeline(timeline: TimelineMax, parent: ChildComponentA, id: string): void {
+  protected setupTransitionOutTimeline(timeline: any, parent: ChildComponentA, id: string): void {
     switch (id) {
       case TransitionId[TransitionDirection.OUT].TRANSITION_ID_1:
         timeline.to(parent.element, 0.2, { opacity: 0, });
@@ -59,7 +58,7 @@ class ChildComponentATransitionController extends MubanTransitionController<Chil
    * @method setupLoopingAnimationTimeline
    * @description Use this method to setup your looping animation timeline
    * */
-  protected setupLoopingAnimationTimeline(timeline: TimelineMax, parent: ChildComponentA,  id: string): void {
+  protected setupLoopingAnimationTimeline(timeline: any, parent: ChildComponentA,  id: string): void {
     switch (id) {
       case TransitionId.LOOP_1:
         timeline.fromTo(parent.element, 0.2, { opacity: 0, }, { opacity: 1 });
