@@ -50,10 +50,15 @@
     "seng",
     "mediamonks",
     "muban",
+    "transition",
     "muban-transition-component"
   ],
   "bugs": {
     "url": "https://github.com/riccomediamonks/muban-transition-component/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riccomediamonks/muban-transition-component.git"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.35",
