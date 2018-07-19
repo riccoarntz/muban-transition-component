@@ -1,4 +1,3 @@
-import { TimelineMax } from 'gsap';
 import MubanTransitionController from '../../src/lib/util/MubanTransitionController';
 import App from './App';
 
@@ -8,7 +7,7 @@ class AppTransitionController extends MubanTransitionController<App> {
    * @method setupTransitionInTimeline
    * @description Use this method to setup your transition in timeline
    * */
-  protected setupTransitionInTimeline(timeline: TimelineMax, parent: App): void {
+  protected setupTransitionInTimeline(timeline: any, parent: App): void {
     timeline.fromTo(parent.element, 0.2, { opacity: 0, }, { opacity: 1});
   }
 
@@ -17,7 +16,7 @@ class AppTransitionController extends MubanTransitionController<App> {
    * @method setupTransitionOutTimeline
    * @description Use this method to setup your transition out timeline
    * */
-  protected setupTransitionOutTimeline(timeline: TimelineMax, parent: App): void {
+  protected setupTransitionOutTimeline(timeline: any, parent: App): void {
     timeline.to(parent.element, 1, { opacity: 0});
   }
 
