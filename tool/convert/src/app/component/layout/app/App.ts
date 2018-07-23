@@ -19,10 +19,6 @@ export default class App extends AbstractComponent {
     // for generic app logic
   }
 
-  /**
-   * @public
-   * @method allComponentsConstructed
-   */
   public adopted(): void {
     this.getElements(`[${MubanTransitionVariable.scrollComponentAttribute}]`).forEach(
       (element: HTMLElement) => {
