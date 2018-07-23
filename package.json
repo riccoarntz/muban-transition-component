@@ -114,5 +114,8 @@
     "seng-disposable": "^1.1.3",
     "seng-event": "^1.2.3",
     "transition-controller": "^1.2.6"
+  },
+  "peerDependencies": {
+    "gsap": "^2.0.1"
   }
 }
