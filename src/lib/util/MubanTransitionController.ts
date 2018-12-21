@@ -4,9 +4,9 @@ import isElement from 'lodash/isElement';
 import isString from 'lodash/isString';
 import { IMubanTransitionMixin } from '../interface/IMubanTransitionMixin';
 
-export default abstract class MubanTransitionController<
-  T extends IMubanTransitionMixin
-> extends AbstractTransitionController<T> {
+export default abstract class MubanTransitionController extends AbstractTransitionController<
+  IMubanTransitionMixin
+> {
   /**
    * This method finds a component based on a string, a html element or the instance.
    *
@@ -14,15 +14,19 @@ export default abstract class MubanTransitionController<
    * @param {string | HTMLElement | IMubanTransitionMixin} component
    * @returns {IMubanTransitionMixin}
    */
-  protected getComponent(component: string | HTMLElement | T): T {
-    let instance: T;
+  protected getComponent(
+    component: string | HTMLElement | IMubanTransitionMixin,
+  ): IMubanTransitionMixin {
+    let instance: IMubanTransitionMixin;
 
     if (isElement(component)) {
-      instance = getComponentForElement<T>(<HTMLElement>component);
+      instance = getComponentForElement<IMubanTransitionMixin>(<HTMLElement>component);
     } else if (isString(component)) {
-      instance = getComponentForElement<T>(this.parentController.getElement(<string>component));
+      instance = getComponentForElement<IMubanTransitionMixin>(
+        this.parentController.getElement(<string>component),
+      );
     } else {
-      instance = <T>component;
+      instance = <IMubanTransitionMixin>component;
     }
 
     if (instance === undefined) {

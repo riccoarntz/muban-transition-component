@@ -6,7 +6,7 @@ const actions = [
   {
     type: actionType.RUN,
     label: 'Update the seng-generator template path.',
-    command: 'sg settings -t ./build-tools/template,./node_modules/muban-transition-component/template',
+    command: 'sg settings -t ./build-tools/generator-template,./node_modules/muban-transition-component/template',
   },
   {
     type: actionType.REPLACE,
@@ -15,7 +15,6 @@ const actions = [
     target: './',
   }
 ];
-
 
 confirm('Running this script will replace/adapt files, are you running this on a clean project?', function (ok) {
   if (ok) {

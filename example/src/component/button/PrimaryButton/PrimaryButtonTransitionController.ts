@@ -2,7 +2,7 @@ import MubanTransitionController from '../../../../../src/lib/util/MubanTransiti
 import { Expo, TimelineMax } from 'gsap';
 import PrimaryButton from './PrimaryButton';
 
-class PrimaryButtonTransitionController extends MubanTransitionController<PrimaryButton> {
+class PrimaryButtonTransitionController extends MubanTransitionController {
   /**
    * Use this method to setup your transition in timeline
    *

@@ -2,8 +2,10 @@ import MubanTransitionController from '../../../../../src/lib/util/MubanTransiti
 import { Expo, TimelineMax } from 'gsap';
 import TransitionDirection from 'transition-controller/lib/enum/TransitionDirection';
 import DummyFoo from './DummyFoo';
+import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
+import PrimaryButton from '../../button/PrimaryButton/PrimaryButton';
 
-class DummyFooTransitionController extends MubanTransitionController<DummyFoo> {
+class DummyFooTransitionController extends MubanTransitionController {
 
   /**
    * Use this method to setup your transition in timeline
@@ -21,7 +23,6 @@ class DummyFooTransitionController extends MubanTransitionController<DummyFoo> {
     parent.test();
 
     const textContent:HTMLElement = parent.getElement('.js-text-content');
-    const primaryButton:HTMLElement = parent.getElement('.js-button-open');
     const loopingTitle:HTMLElement = parent.getElement('.js-looping-title');
     const loopingAnimation:HTMLElement = parent.getElement('.js-loop-animation');
 
@@ -31,7 +32,10 @@ class DummyFooTransitionController extends MubanTransitionController<DummyFoo> {
     timeline.from(textContent, 0.8, {opacity: 0}, 'afterBg');
     timeline.from(textContent, 0.8, {y: 30, ease: Expo.easeOut, clearProps: 'all'}, 'afterBg');
 
-    timeline.add(this.getTimeline(primaryButton, TransitionDirection.IN), 'afterBg+=0.2');
+    const component = <PrimaryButton>getComponentForElement(parent.getElement('.js-button-open'));
+
+    timeline.add(this.getTimeline(component, TransitionDirection.IN), 'afterBg+=0.2');
+    timeline.add(this.getTimeline(<HTMLElement>parent.getElement('.js-button-open-2'), TransitionDirection.IN), 'afterBg+=0.2');
 
     timeline.from(loopingTitle, 0.8, {opacity: 0}, 'afterBg+=0.4');
     timeline.from(loopingTitle, 0.8, {y: 20, ease: Expo.easeOut}, 'afterBg+=0.4');
