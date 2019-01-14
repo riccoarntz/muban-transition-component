@@ -2,7 +2,7 @@ import { MubanTransitionController, IMubanTransitionMixin } from 'muban-transiti
 import { TimelineMax } from 'gsap';
 import {{name_pc}} from './{{name_pc}}';
 
-class {{name_pc}}TransitionController extends MubanTransitionController<{{name_pc}}>
+class {{name_pc}}TransitionController extends MubanTransitionController
 {
   /**
    * Use this method to setup your transition in timeline
