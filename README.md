@@ -22,7 +22,7 @@ npm i -S muban-transition-component
 ```
 
 ## Online Demo
-Checkout the online [demo](https://riccomediamonks.github.io/muban-transition-component/example/).
+Checkout the online [demo](https://riccoarntz.github.io/muban-transition-component/example/).
 
 
 ## Demo
@@ -39,7 +39,7 @@ Run the example:
 ## Usage
 Detailed documentation and examples are located in the wiki!
 
-### [Check the wiki!](https://github.com/riccomediamonks/muban-transition-component/wiki)
+### [Check the wiki!](https://github.com/riccoarntz/muban-transition-component/wiki)
 
 
 ## Building
@@ -49,7 +49,7 @@ In order to build muban-transition-component, ensure that you have [Git](http://
 
 Clone a copy of the repo:
 ```sh
-git clone https://github.com/riccomediakonks/muban-transition-component.git
+git clone https://github.com/riccoarntz/muban-transition-component.git
 ```
 
 Change to the vue-transition directory:
