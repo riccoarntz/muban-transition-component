@@ -7,18 +7,21 @@ export default class App extends AbstractComponent {
   static displayName: string = 'app-root';
 
   public scrollTrackerComponentManager: ScrollTrackerComponentManager<IMubanTransitionMixin> = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
+    inViewProgressEnabled: false,
     setDebugLabel: true,
     debugBorderColor: 'red',
-
-    inViewProgressEnabled: true,
-
     scrollThrottle: 100,
     resizeDebounce: 100,
 
-    enableSmoothScroll: true,
+    enableSmoothScroll: false,
     smoothScrollOptions: {
       damping: 0.1,
+      thumbMinSize: 20,
+      renderByPixels: true,
       alwaysShowTracks: false,
+      continuousScrolling: true,
+      wheelEventTarget: null,
+      plugins: {},
     },
   });
 
@@ -39,7 +42,6 @@ export default class App extends AbstractComponent {
     // clean up stuff when hot reloading
     if (this.scrollTrackerComponentManager) {
       this.scrollTrackerComponentManager.dispose();
-      this.scrollTrackerComponentManager = null;
     }
   }
 }

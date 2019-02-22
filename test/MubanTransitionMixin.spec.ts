@@ -60,8 +60,6 @@ describe('MubanTransitionMixin.spec', () => {
     });
   });
 
-
-
   describe('inViewProgress', function () {
     it('should inViewProgress the component', function () {
       expect(component.inViewProgress()).to.be.undefined;
