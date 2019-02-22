@@ -18,7 +18,7 @@ class DummyFooTransitionController extends MubanTransitionController {
    */
   protected setupTransitionInTimeline(
     timeline:TimelineMax,
-    parent:DummyFoo
+    parent:any
   ): void {
     parent.test();
 

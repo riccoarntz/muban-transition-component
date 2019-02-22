@@ -1,22 +1,33 @@
 import CoreComponent from 'muban-core/lib/CoreComponent';
-import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
-import DummyFooPopup from '../../DummyFooPopup/DummyFooPopup';
+// import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
+// import DummyFooPopup from '../../DummyFooPopup/DummyFooPopup';
 import DummyFooTransitionController from './DummyFooTransitionController';
 import mubanTransitionMixin from '../../../../../src/lib/mixin/MubanTransitionMixin';
 import mubanTransitionCoreMixin from '../../../../../src/lib/mixin/MubanTransitionCoreMixin';
 
 export default class DummyFoo extends mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent)) {
   static displayName: string = 'dummy-foo';
-  public transitionController: DummyFooTransitionController;
+  // public transitionController: DummyFooTransitionController;
 
-  private dummyFooPopup: DummyFoo;
+  // private dummyFooPopup: DummyFoo;
 
   constructor(public element: HTMLElement) {
     super(element);
 
     this.transitionController = new DummyFooTransitionController(this);
     this.addEventListeners();
-    this.dummyFooPopup = getComponentForElement(this.element.querySelector(`[data-component="${DummyFooPopup.displayName}"]`));
+    // this.dummyFooPopup = getComponentForElement(this.element.querySelector(`[data-component="${DummyFooPopup.displayName}"]`));
+  }
+
+  /**
+   * @public
+   * @method inViewProgress
+   */
+  public inViewProgress(progress:number):void
+  {
+    (<HTMLElement>this.element.querySelector('.js-progress')).style.width = `${progress * 100}%`;
+
+    console.log(progress);
   }
 
   /**
@@ -27,7 +38,6 @@ export default class DummyFoo extends mubanTransitionMixin(mubanTransitionCoreMi
   {
 
   }
-
 
   /**
    * @private
@@ -42,7 +52,7 @@ export default class DummyFoo extends mubanTransitionMixin(mubanTransitionCoreMi
    * @method handleOpenPopupClick
    */
   private handleOpenPopupClick(): void {
-    this.dummyFooPopup.transitionIn();
+    // this.dummyFooPopup.transitionIn();
   }
 
   public dispose() {

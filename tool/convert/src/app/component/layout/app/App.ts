@@ -7,11 +7,19 @@ export default class App extends AbstractComponent {
   static displayName: string = 'app-root';
 
   public scrollTrackerComponentManager: ScrollTrackerComponentManager<IMubanTransitionMixin> = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
-    config: {
-      setDebugLabel: true,
-      debugBorderColor: 'red',
-      resizeDebounce: 100,
-    }
+    setDebugLabel: true,
+    debugBorderColor: 'red',
+
+    inViewProgressEnabled: true,
+
+    scrollThrottle: 100,
+    resizeDebounce: 100,
+
+    enableSmoothScroll: true,
+    smoothScrollOptions: {
+      damping: 0.1,
+      alwaysShowTracks: false,
+    },
   });
 
   constructor(element: HTMLElement) {

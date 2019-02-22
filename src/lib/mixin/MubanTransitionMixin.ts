@@ -9,7 +9,9 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixi
   return class MubanTransitionMixin extends Base {
     public transitionController: AbstractTransitionController<IMubanTransitionMixin>;
     public enterViewThreshold: number = 0.25;
+    public inViewProgressThreshold: number = 0;
     public hasEntered: boolean = false;
+    public currentViewProgress: number = 0;
 
     constructor(...args: any[]) {
       super(...args);
@@ -23,6 +25,9 @@ function mubanTransitionMixin<TBase extends Constructor<IMubanTransitionCoreMixi
     public leaveView(): void {
       this.stopLoopingAnimation();
     }
+
+    // @ts-ignore
+    public inViewProgress(progress: number): void {}
 
     public beyondView(): void {
       if (!this.hasEntered) {
