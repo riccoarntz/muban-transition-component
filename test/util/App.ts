@@ -7,16 +7,14 @@ import AppTransitionController from './AppTransitionController';
 import mubanTransitionCoreMixin from '../../src/lib/mixin/MubanTransitionCoreMixin';
 import mubanTransitionMixin from '../../src/lib/mixin/MubanTransitionMixin';
 
-export default class App extends mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent)){
+export default class App extends mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent)) {
   static displayName: string = 'app-root';
   public transitionController: AppTransitionController;
 
   public scrollTrackerComponentManager: ScrollTrackerComponentManager<IMubanTransitionMixin> = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
-    config: {
-      setDebugLabel: true,
-      debugBorderColor: 'red',
-      resizeDebounce: 100,
-    }
+    setDebugLabel: true,
+    debugBorderColor: 'red',
+    resizeDebounce: 100,
   });
 
   constructor(element: HTMLElement) {

@@ -32,6 +32,13 @@ export interface IMubanTransitionMixin extends IMubanTransitionCoreMixin {
   beyondView(): void;
 
   /**
+   * @public
+   * @method inViewProgress
+   * @description triggered every time the scroll-position changes and your component is within the viewport. This method will have the parameter progress which is a number between 0-1.
+   */
+  inViewProgress(progress: number): void;
+
+  /**
    * Calling transition in will trigger transitionIn on your transition controller and
    * start the desired timeline.
    *
@@ -75,4 +82,19 @@ export interface IMubanTransitionMixin extends IMubanTransitionCoreMixin {
    * Setting this number to for example 0.5 will trigger the enterView method when the component is already visible for 50% within your viewport.
    */
   enterViewThreshold: number;
+
+  /**
+   * @description: same as enterViewThreshold but then used as an offset from when your inViewProgress will start
+   */
+  inViewProgressThreshold: number;
+
+  /**
+   * @description: PropertyName of the component that should is by default set to false. Will be set to value if it has passed the viewport once already
+   */
+  hasEntered: boolean;
+
+  /**
+   * @description: PropertyName of the component where we will store the progress of its visibility
+   */
+  currentViewProgress: number;
 }

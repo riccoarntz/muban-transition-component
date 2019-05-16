@@ -4,6 +4,7 @@ body {
   margin: 0;
   color: #6c757d;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  height: 100%;
 }
 
 h1,h2,h3,h4 {
@@ -97,6 +98,14 @@ h1,h2,h3,h4 {
   position: relative;
 }
 
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: blue;
+}
 
 .site-header {
   position: fixed;
@@ -128,6 +137,7 @@ h1,h2,h3,h4 {
   text-align: center;
   white-space: nowrap;
   color: #41a6ff;
+  border-bottom: 1px dotted white;
 }
 
 .dummy-foo-bg {
@@ -139,7 +149,7 @@ h1,h2,h3,h4 {
 }
 
 .dummy-foo:nth-child(n+2) .dummy-foo-bg {
-  background-color: white;
+  /*background-color: white;*/
 }
 
   /* Dummy Foo POPUP */
