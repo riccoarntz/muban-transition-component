@@ -7,6 +7,7 @@ import mubanTransitionCoreMixin from '../../../../../src/lib/mixin/MubanTransiti
 
 export default class DummyFoo extends mubanTransitionMixin(mubanTransitionCoreMixin(CoreComponent)) {
   static displayName: string = 'dummy-foo';
+  public enterViewThreshold:number = 0;
   // public transitionController: DummyFooTransitionController;
 
   // private dummyFooPopup: DummyFoo;

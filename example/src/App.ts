@@ -8,6 +8,7 @@ export default class App extends CoreComponent{
   static displayName: string = 'app-root';
 
   public scrollTrackerComponentManager: ScrollTrackerComponentManager<IMubanTransitionMixin> = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
+    container: window,
     inViewProgressEnabled: true,
     setDebugLabel: true,
     debugBorderColor: 'red',

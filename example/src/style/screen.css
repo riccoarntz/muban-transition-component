@@ -91,7 +91,22 @@ h1,h2,h3,h4 {
 }
 
 .page-holder {
+  position: relative;
+  /*overflow: auto;*/
+  /*height: 100%;*/
+}
+
+.app {
+  height: 100%;
+}
+.site-holder {
   padding-top: 55px;
+  /*margin-top: 55px;*/
+  /*height: 100%;*/
+}
+
+body {
+  /*overflow: hidden;*/
 }
 
 .block-component {
