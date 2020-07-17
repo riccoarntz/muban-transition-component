@@ -4,7 +4,7 @@ import AbstractComponent from 'app/component/AbstractComponent';
 import getComponentForElement from 'muban-core/lib/utils/getComponentForElement';
 
 export default class App extends AbstractComponent {
-  static displayName: string = 'app-root';
+  public static readonly displayName: string = 'app-root';
 
   public scrollTrackerComponentManager: ScrollTrackerComponentManager<IMubanTransitionMixin> = new ScrollTrackerComponentManager<IMubanTransitionMixin>({
     inViewProgressEnabled: false,
