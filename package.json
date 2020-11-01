@@ -86,7 +86,7 @@
     "eslint-plugin-prettier": "^2.4.0",
     "gsap": "^2.0.1",
     "husky": "^0.14.3",
-    "jsdom": "^11.5.1",
+    "jsdom": "^15.1.1",
     "jsdom-global": "^3.0.2",
     "lint-staged": "^6.0.0",
     "mocha": "^4.0.1",
