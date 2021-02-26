@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars, class-methods-use-this */
 import { MubanTransitionController, IMubanTransitionMixin } from 'muban-transition-component';
 import { TimelineMax } from 'gsap';
 import {{name_pc}} from './{{name_pc}}';
